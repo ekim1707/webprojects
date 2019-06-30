@@ -1,0 +1,75 @@
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 10px;
+    font-family: 'Catamaran', sans-serif;
+    background-color: #4699EB
+}
+h1 {
+    font-size: 100px;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    margin: 0;
+    color: red;
+    text-shadow: 4px 4px 4px black;
+}
+h2 {
+    font-size: 60px;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    color: white;
+    text-shadow: 3px 3px 1px black;
+}
+h3 {
+    font-family: 'Marck Script', cursive;
+    color: red;
+    font-size: 50px;
+    text-shadow: 1px 1px 1px black;
+    text-align: center;
+}
+p {
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ul, li {
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: white;
+    margin-left: 200px;
+    margin-right: auto;
+}
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #4699EB;
+    padding: 0 20px 20px 20px;
+    /* border: 5px solid black; */
+}
+.image1 {
+    display: block;
+    margin: 0 auto;
+}
+.image2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.image3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 100px;
+    max-height: 100px;
+}
