@@ -34,6 +34,8 @@ p {
     text-align: center;
     display: flex;
     margin-left: 150px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
   }
 body {
     width: 100%;
