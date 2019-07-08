@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<style>
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+</style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Barriecito|Indie+Flower|Pacifico|Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
+        <title>
+            Joel Houston Webpage
+        </title>
+    </head>
+    <body>
+        <body background="images/background.jpg">
+        <div class="header" id="myHeader">
+        <h3>
+        &nbsp;&nbsp;&nbsp;
+        <img src="images/logo3.jpg" alt="Hillsong Logo" class="image4" height="50" width="150">&nbsp;&nbsp;&nbsp;
+        <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://hillsong.com/nyc/">Hillsong: New York</a>&nbsp;&nbsp;&nbsp;
+        <a href="biography.html">Short Biography</a>&nbsp;&nbsp;&nbsp;
+        <a href="lyrics.html">Lyrical Influence</a>&nbsp;&nbsp;&nbsp;
+        <a href="videos.html">Videos</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.youtube.com/watch?v=3rZuWJp1OeY&list=PLks73uWy20avsE6j1HjNTJkaW4r7XhBbs&index=24&t=0s">Live Speech in Concert</a>&nbsp;&nbsp;&nbsp;
+        <a href="extras.html">Extras</a>&nbsp;&nbsp;&nbsp;
+        </h3>
+        </div>
+        <h1>Joel Houston: Everlasting</h1>
+        <!-- <img src="images/hillsong.jpg" alt="Hillsong United Live" class="image2" height="400" width="500"><br> -->
+        <ul>
+        <li>Head pastor of Hillsong Church in New York</li>
+        <li>Co-founder of the band Hillsong United</li>
+        <li>One of the driving creative forces in songwriting and performing for the band since its inception to this very day.</li>
+        </ul>
+        <h2>Take a closer look from the Inside-Out...</h2>
+        <br><br><br><br>
+        <script>
+            window.onscroll = function() {myFunction()};
+            
+            var header = document.getElementById("myHeader");
+            var sticky = header.offsetTop;
+            
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+                } else {
+                header.classList.remove("sticky");
+                }
+            }
+            </script>
+    </body>
+</html>

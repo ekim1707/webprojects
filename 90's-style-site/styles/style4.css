@@ -1,0 +1,58 @@
+html {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Roboto Mono', monospace;
+    background-color: black;
+}
+h1 {
+    font-size: 100px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    margin-right: 40px;
+}
+h2 {
+    font-size: 20px;
+    font-family: 'Source Code Pro', monospace;
+    text-align: left;
+    margin: 0;
+    padding: 20px 0;
+    color: white;
+    display: flex;
+    background-color: white;
+    margin-right: 40px;
+}
+p {
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+    display: flex;
+    margin-left: 150px;
+  }
+body {
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    padding: 0 20px 20px 20px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+a {
+    color: purple
+}
+a:hover {
+    color: red
+}
+a.link {
+    color: white
+}
+a.link:hover {
+    color: red
+}

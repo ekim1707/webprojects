@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<style>
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        </style>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Barriecito|Indie+Flower|Pacifico|Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet">
+        <link href="styles/style1.css" rel="stylesheet">
+        <title>
+            Joel Houston Bio
+        </title>
+    </head>
+    <body>
+        <body background="images/background.jpg">
+        <div class="header" id="myHeader">
+        <h2>
+        &nbsp;&nbsp;&nbsp;
+        <img src="images/logo3.jpg" alt="Hillsong Logo" class="image4" height="50" width="150">&nbsp;&nbsp;&nbsp;
+        <a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://hillsong.com/nyc/">Hillsong: New York</a>&nbsp;&nbsp;&nbsp;
+        <a href="biography.html">Short Biography</a>&nbsp;&nbsp;&nbsp;
+        <a href="lyrics.html">Lyrical Influence</a>&nbsp;&nbsp;&nbsp;
+        <a href="videos.html">Videos</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.youtube.com/watch?v=3rZuWJp1OeY&list=PLks73uWy20avsE6j1HjNTJkaW4r7XhBbs&index=24&t=0s">Live Speech in Concert</a>&nbsp;&nbsp;&nbsp;
+        <a href="extras.html">Extras</a>&nbsp;&nbsp;&nbsp;
+        </h2>
+        </div>
+        <h1>Biography</h1>
+        <p>Joel was the son of Brian Houston, who was the founder of the original Hillsong Church in Australia. In the early days, Joel served primarily
+            as a bass guitarist for the main Hillsongs worship band, but eventually, he became one of the leaders behind the foundation of the more new-age, modern
+            sub-division Hillsong United band, which included other driving, influencial forces in the Christian music industry like Marty Sampson and Brooke Frasier.
+            Upon the move, Joel immediately also stepped into a new musical role as lead-singer and songwriter as well. From there, Joel's impact could not be
+            ignored as he created several life-changing songs and spread his message to the world during countless live tours with the band.
+        </p>
+        <br>
+        <p><a href="https://en.wikipedia.org/wiki/Joel_Houston">Discography</a> (scroll to bottom of page)</p>
+        <script>
+                window.onscroll = function() {myFunction()};
+                
+                var header = document.getElementById("myHeader");
+                var sticky = header.offsetTop;
+                
+                function myFunction() {
+                    if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                    } else {
+                    header.classList.remove("sticky");
+                    }
+                }
+                </script>
+    </body>
+</html>
