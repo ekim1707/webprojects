@@ -1,0 +1,81 @@
+section {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+div.one {
+    position: absolute;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black
+}
+div.two {
+    position: absolute;
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    left: 100px;
+    border: 2px solid black
+}
+div.three {
+    position: absolute;
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    left: 200px;
+    border: 2px solid black
+}
+div.four {
+    position: absolute;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    border: 2px solid black
+}
+div.five {
+    position: absolute;
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 100px;
+    border: 2px solid black
+}
+div.six {
+    position: absolute;
+    background-color: violet;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    left: 200px;
+    border: 2px solid black
+}
+div.seven {
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    border: 2px solid black
+}
+div.eight {
+    position: absolute;
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    left: 100px;
+    border: 2px solid black
+}
+div.nine {
+    position: absolute;
+    background-color: grey;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    left: 200px;
+    border: 2px solid black
+}

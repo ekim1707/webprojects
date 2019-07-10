@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+}
+div.one {
+    position: absolute;
+    background-color: yellow;
+    width: 20%;
+    height: 100%;
+    border: 2px solid black
+}
+div.two {
+    position: absolute;
+    background-color: green;
+    width: 80%;
+    left: 20%;
+    height: 100%;
+    border: 2px solid black
+}

@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+}
+div.one {
+    position: absolute;
+    background-color: red;
+    width: 20%;
+    height: 100%;
+    border: 2px solid black
+}
+div.two {
+    position: absolute;
+    background-color: white;
+    width: 60%;
+    left: 20%;
+    height: 100%;
+    border: 2px solid black
+}
+div.three {
+    position: absolute;
+    background-color: blue;
+    width: 20%;
+    left: 80%;
+    height: 100%;
+    border: 2px solid black
+}
