@@ -1,0 +1,27 @@
+body {
+    position: relative;
+}
+.modal-dialog {
+    position: absolute;
+    width: 300px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+.modal-header {
+    background-color: grey;
+    color: white;
+    padding: 2px 5px 2px 5px;
+}
+.modal-content {
+    background-color: white;
+    padding: 5px 5px 5px 5px;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: white;
+}
