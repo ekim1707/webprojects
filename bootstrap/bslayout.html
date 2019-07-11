@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Bootstrap</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+.container_fluid {
+}
+h1 {
+    display: flex;
+    background-color: white;
+    margin: 0;
+    padding: 20px 10px 20px 10px;
+}
+h2 {
+    font-size: 60px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    margin: 70px 0px 70px 0px;
+}
+h3 {
+    font-size: 40px;
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+}
+a:hover {
+    color: red;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
+#right {
+    text-align: right;
+}
+ul {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+li {
+    width: 20%;
+    padding: 5px 0px;
+}
+.h {
+    width: 80%;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px 0px;
+}
+hr {
+    background-color: black;
+    height: 1px;
+}
+#imagesonly {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0px 30px 0px;
+    justify-content: center;
+    align-items: center;
+}
+.tags {
+    padding: 10px 0px;
+    font-size: 20px;
+}
+footer {
+    display: block;
+    clear: both;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+    <body>
+        <div class="container_fluid">
+        <div class="row">
+        <h1 class="header" id="myHeader"><div class="col-md-6">Our Company</div>
+            <div class="col-md-6" id="right">
+            <a href="bslayout.html">Home</a>&nbsp|
+            <a href="">Products</a>&nbsp|
+            <a href="">Company</a>&nbsp|
+            <a href="">Blog</a></div>
+        </h1><hr>
+                    <h2>We Are Awesome</h2>
+                <hr>
+                    <h3>Awesomeness</h3>
+                <ul class="col-sm-4">
+                    <div class="h"><strong>Boldness 1</strong></div>
+                    <li>Item One</li>
+                    <li>Item Two</li>
+                    <li>Item Three</li>
+                    </ul>
+                <ul class="col-sm-4">
+                    <div class="h"><strong>Boldness 2</strong></div>
+                    <li>Item One</li>
+                    <li>Item Two</li>
+                    <li>Item Three</li>
+                    </ul>
+                <ul class="col-sm-4">
+                    <div class="h"><strong>Boldness 3</strong></div>
+                    <li>Item One</li>
+                    <li>Item Two</li>
+                    <li>Item Three</li>
+                    </ul>
+                <div class="col-md-6" id="imagesonly">
+                    <img src="images/pd.JPG" alt="pd image" class="pdimage" height="300" width="300">
+                    <div class="tags">Awesome Person #1</div>
+                </div>
+                <div class="col-md-6" id="imagesonly">
+                    <img src="images/kk.jpg" alt="kk image" class="kkimage" height="300" width="300">
+                    <div class="tags">Awesome Person #2</div>
+                    </div>
+                </div>
+            </div>
+        <footer><hr>Footer</footer>
+        <script>
+                window.onscroll = function() {myFunction()};
+                
+                var header = document.getElementById("myHeader");
+                var sticky = header.offsetTop;
+                
+                function myFunction() {
+                    if (window.pageYOffset > sticky) {
+                    header.classList.add("sticky");
+                    } else {
+                    header.classList.remove("sticky");
+                    }
+                }
+                </script>
+    </body>
+</html>
