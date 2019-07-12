@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <title>Flexbox Practice Exercise</title>
+<style>
+html {
+    background-color: pink;
+}
+.flex_container {
+    position: absolute;
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    border-radius: 10px;
+    top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+}
+.flex_container_fluid {
+    width: 50%;
+}
+.imgcontainer {
+    display: flex;
+}
+nav {
+    min-width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+a {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+    color: grey;
+    margin: 10px;
+    align-items: center;
+}
+.image1 {
+    display: flex;
+    padding: 20px;
+    margin: 20px 80px 20px 80px;
+    height: 10%;
+    width: 10%;
+}
+.image2 {
+    display: flex;
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+    width: 40%;
+    height: 70%;
+}
+.menu {
+    position: inline-block;
+    padding: 40px;
+    margin: 20px 80px 20px 80px;
+}
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: pink;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+.main1 {
+    display: flex;
+    font-size: 50px;
+    margin-left: 100px;
+}
+.main2 {
+    display: flex;
+    font-size: 100px;
+    margin-left: 100px;
+    color: pink;
+}
+.main3 {
+    display: flex;
+    font-size: 20px;
+    margin-left: 100px;
+}
+.btn {
+    display: block;
+    border-radius: 40px;
+    width: 30%;
+    background-color: pink;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+#color {
+    color: pink;
+}
+</style>
+    </head>
+    <body>
+        <div class="flex_container">
+            <nav>
+                <img src="icon.png" alt="Icon image" class="image1">
+                <a href="">WEB DESIGN</a>
+                <a href="">UI/UX</a>
+                <a href="">WEBFRAMING</a>
+                <a href="">PROTOTYPING</a>
+                <div class="menu" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                      </div>
+            </nav>
+        <div class="flex_container_fluid">
+            <div class="main1">
+                Hello,
+            </div>
+            <div class="main2">
+                <em>dribble</em>
+            </div>
+            <div class="main3">
+                Special Thanks to <div id="color">&nbspJuri Danilov&nbsp</div> for invite!
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Let's Go</button>
+        </div>
+        </div>
+        <div class="imgcontainer">
+            <img src="icecream.jpg" alt="Ice cream image" class="image2">
+        </div>
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("change");
+          }
+          </script>
+    </body>
+</html>
