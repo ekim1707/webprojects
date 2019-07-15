@@ -90,35 +90,28 @@ Instructions:
 
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/bootstrap/images/bootstrap.png 'bootstrap.png')
 
-4. [shapes.py](https://github.com/ekim1707/secondclasspython/blob/master/shapes.py)
+Use Bootstrap to make the layout pictured above.
 
-Draw these simple shapes (each in its own .py file):
+---
 
-an equilateral triangle
-a square
-a pentagon
-a hexagon
-an octagon
-a star
-a circle
+Analysis:
 
-Extract all the code for the shapes in exercise 1 into functions. Move them all into a single file called shapes.py. Write a new .py program that imports the shapes module and use its functions to draw all the available shapes onto the screen.
+Overall, the presentation came out as desired. The headbar is again sticky, yet this time it is also display-size compatible (as is the rest of the layout). Flexbox was incorporated along with the bootstrap foundation to complete the project. The website was intentionally left unstyled to highlight the structural integrity of the bootstrap layout.
 
-5. [shapeparameters.py](https://github.com/ekim1707/secondclasspython/blob/master/shapeparameters.py)
+4. [widow-site/index.html](https://github.com/ekim1707/web_projects/blob/master/widow-site/index.html)
 
-*Cont. from above
+Grade: N/A
 
-Add parameters into the various functions of your shapes module. Include:
+Instructions: N/A
 
-size - the size of the shape
-fill - a bool specifying whether to fill or outline the shape
-color - the color of the shape. *Hint: you can use the color function to set both the pen color and the fill color.
-Make a new .py program that imports the shapes module and uses its functions to draw different shapes of various colors, fills, and sizes.
+Analysis:
+
+This first-attempt html was made according to the developer mozilla HTML instruction page (https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web), which was provided as a reference for the pre-work that was assigned before the start of the DigitalCrafts bootcamp. The website is very basic and raw in terms of both visuality and user-friendly interface, yet it at least does serve its function well enough.
 
 ##Screenshots
 ---
-![alt text](https://github.com/ekim1707/secondclasspython/blob/master/screenshots/turtlestar.png 'turtlestar.png')
-![alt text](https://github.com/ekim1707/secondclasspython/blob/master/screenshots/turtlestar1.png 'turtlestar1.png')
+![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex.png 'googleex.png')
+![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex2.png 'googleex2.png')
 
 We completed the turtlestar.py file (which produced the first image) before we came across the solution code (turtlestar2.py, which produced the second image), and we noted the interesting differences that resulted from the different methods of completing the instructions of the exercise.
 
