@@ -40,141 +40,55 @@ There proved to be several difficult challenges with HTML that were not expected
 
 Grade: N/A
 
+Instructions:
 
-2. [guessnumber.py](https://github.com/ekim1707/secondclasspython/blob/master/guessnumber.py)
+Create a basic website!
 
-Step 1
-You will implement a guess-the-number game where the player has to try guessing a secret number until he gets it right. For now, you will "hard code" the secret number to 5 (just set it to five like secret_number = 5). You will prompt the player to enter a number again and again, each time comparing his input to the secret number. To to that, you will need to write a while loop. If he guesses correctly, you will print "You win!", otherwise, you will prompt for a number again.
+Start with the home page at index.html
+Create pages for individual topics. These can your interest, passions, family, cats, or anything else.
+Link the different pages to one another (via nav or links in the content).
+Include images
+Make use of tags you learned
+Make use of CSS styling
+Make sure all your html page are validated via plugin (or you can always upload your HTML file here.)
+Make 5-10 different pages. Put good content in them
+ 
+A few ideas:
 
-Example session:
+Document a few of the python projects you created with screenshots, pre-formatted code, and a brief description.
+Create a hypertext version of notes you've taken during class, including links to external resources.
+Create a (hopefully non-creepy) fan page for something you love.
 
-$ python guess_the_number.py I am thinking of a number between 1 and 10. What's the number? 3 Nope, try again. What's the number? 9 Nope, try again. What's the number? 5 Yes! You win!
+---
 
-Step 2: Give High-Low Hint
-Improve your game to provide the player with a high-or-low hint. Example session:
+Analysis:
 
-$ python guess_the_number.py I am thinking of a number between 1 and 10. What's the number? 3 3 is too low. What's the number? 9 9 is too high. What's the number? 5 Yes! You win!
+This site was the first one made that featured a sticky headbar. The headbar does not adjust to display-size, which would the very next change I would make to it. This is also the first headbar I ever made that implemented hover color changes for links, along with a full-page background image, and the use of -webkit- for text-bordering in CSS.
 
-Step 3: Randomly Generated Secret Number
-Instead of hard-coding the secret number to 5 now, you will generate the secret number using a random number generator provided by Python, so that even you, the programmer, cannot know the secret number before hand. To generate a random number between 1 and 10, inclusive, do this:
+2. [classexercises/googleexercise.html](https://github.com/ekim1707/web_projects/blob/master/classexercises/googleexercise.html)
 
-import random my_random_number = random.randint(1, 10)
-Use this same method to generate your secret number for the game. Play the game a couple of times to see that the secret number is different each time.
+Grade: N/A
 
-Step 4: Limit Number of Guesses
-Limit the number of guesses the player has to 5. If he cannot guess the number within 5 guesses, he losses. Example session:
+Instructions:
 
-$ python guess_the_number.py I am thinking of a number between 1 and 10. You have 5 guesses left. What's the number? 1 1 is too low. You have 4 guesses left. What's the number? 10 10 is too high. You have 3 guesses left. What's the number? 2 2 is too low. You have 2 guesses left. What's the number? 7 7 is too high. You have 1 guesses left. What's the number? 4 4 is too low. You ran out of guesses!
-Bonus: Play Again
-At the conclusion of a game, give the player the option of playing again. Example session:
+The mockup image has been provided ... as well as the main image.
+Develop your site to mimic Google's center-aligned site.
 
-$ python guess_the_number.py I am thinking of a number between 1 and 10. You have 5 guesses left. What's the number? 1 Yes! You win! Do you want to play again (Y or N)? Y I am thinking of a number between 1 and 10. You have 5 guesses left. What's the number? 5 Yes! You win! Do you want to play again (Y or N)? N Bye!
+https://dc-class.herokuapp.com/static/fullstack/projects/google/google_mockup.png
 
-3. [phonebook.py](https://github.com/ekim1707/secondclasspython/blob/master/phonebook.py)
+---
 
-Electronic Phone Book:
+Analysis:
 
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-What do you want to do (1-5)?
+This exercise was mainly focused on the use of Flexbox, which is evident in the CSS (classexercises/styleg.css). The final product I created is display-size compatible, and also features my first use of input-boxes and buttons (non-functional; for display purposes only).
 
-If they choose to look up an entry, you will ask them for the person's name, and then look up the person's phone number by the given name and print it to the screen.
-If they choose to set an entry, you will prompt them for the person's name and the person's phone number,
-If they choose to delete an entry, you will prompt them for the person's name and delete the given person's entry.
-If they choose to list all entries, you will go through all entries in the dictionary and print each out to the terminal.
-If they choose to quit, end the program.
+3. [bootstrap/bslayout.html](https://github.com/ekim1707/web_projects/blob/master/bootstrap/bslayout.html)
 
-Example session:
+Grade: N/A
 
-$ python phonebook.py 
+Instructions:
 
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-
-What do you want to do (1-5)? 2 
-Name: Melissa 
-Phone Number: 584-394-5857 
-Entry stored for Melissa. 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-
-What do you want to do (1-5)? 2 
-Name: Igor 
-Phone Number: 857-485-2935 
-Entry stored for Igor. 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-
-What do you want to do (1-5)? 2 
-Name: Jazz 
-Phone Number: 334-584-2345 
-Entry stored for Jazz. 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit 
-
-What do you want to do (1-5)? 1 
-Name: Melissa 
-Found entry for Melissa: 584-394-5857 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-
-What do you want to do (1-5)? 3 
-Name: Melissa 
-Deleted entry for Melissa 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit
-
-What do you want to do (1-5)? 
-4 Found entry for Igor: 857-485-2935 
-Found entry for Jazz: 334-584-2345 
-
-Electronic Phone Book:
-
-Look up an entry 
-Set an entry 
-Delete an entry 
-List all entries 
-Quit 
-
-What do you want to do (1-5)? 5 Bye.
+![alt text](https://github.com/ekim1707/web_projects/blob/master/bootstrap/images/bootstrap.png 'bootstrap.png')
 
 4. [shapes.py](https://github.com/ekim1707/secondclasspython/blob/master/shapes.py)
 
