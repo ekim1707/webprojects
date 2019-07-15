@@ -59,8 +59,6 @@ Document a few of the python projects you created with screenshots, pre-formatte
 Create a hypertext version of notes you've taken during class, including links to external resources.
 Create a (hopefully non-creepy) fan page for something you love.
 
----
-
 Analysis:
 
 This site was the first one made that featured a sticky headbar. The headbar does not adjust to display-size, which would the very next change I would make to it. This is also the first headbar I ever made that implemented hover color changes for links, along with a full-page background image, and the use of -webkit- for text-bordering in CSS.
@@ -76,8 +74,6 @@ Develop your site to mimic Google's center-aligned site.
 
 https://dc-class.herokuapp.com/static/fullstack/projects/google/google_mockup.png
 
----
-
 Analysis:
 
 This exercise was mainly focused on the use of Flexbox, which is evident in the CSS (classexercises/styleg.css). The final product I created is display-size compatible, and also features my first use of input-boxes and buttons (non-functional; for display purposes only).
@@ -91,8 +87,6 @@ Instructions:
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/bootstrap/images/bootstrap.png 'bootstrap.png')
 
 Use Bootstrap to make the layout pictured above.
-
----
 
 Analysis:
 
