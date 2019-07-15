@@ -113,49 +113,65 @@ This first-attempt html was made according to the developer mozilla HTML instruc
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex.png 'googleex.png')
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex2.png 'googleex2.png')
 
-We completed the turtlestar.py file (which produced the first image) before we came across the solution code (turtlestar2.py, which produced the second image), and we noted the interesting differences that resulted from the different methods of completing the instructions of the exercise.
+These screenshots are to depict the achieved display-size functionality of the aforementioned Google Exercise above (#3 in "Most Interesting Available Working Files").
 
 ##Github Link
 ---
-[Github](https://github.com/ekim1707/secondclasspython)
+[Github](https://github.com/ekim1707/web_projects)
 
 ##Code Examples
 ---
-Included is the code for both star-drawing programs.
+Included is the CSS for the classexercises/googleexercise.html file.
 
-* turtlestar.py:
+* classexercises/styles/styleg.css:
 
-'''python
-from turtle import *
-
-rt(72)
-fd(100)
-lt(72)
-fd(100)
-rt(144)
-fd(100)
-lt(72)
-fd(100)
-rt(144)
-fd(100)
-lt(72)
-fd(100)
-rt(144)
-fd(100)
-lt(72)
-fd(100)
-rt(144)
-fd(100)
-lt(72)
-fd(100)
-
-mainloop()'''
-
-* turtlestar1.py:
-
-'''python
-from turtle import *
-for i in range(5):
-    forward(100)
-    right(144)
-mainloop()'''
+'''
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 2px solid black;
+}
+.wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.image1 {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 70px;
+    padding: 10px 0;
+}
+.input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+input[type="text"] {
+    width: 450px;
+    height: 35px;
+    padding: 0 10px;
+}
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    margin: 10px 0;
+    background-color: rgb(235, 232, 232);
+    color: rgb(99, 98, 98);
+    width: 120px;
+    height: 35px;
+    margin: 15px 5px;
+    border: none;
+}'''
