@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <title>New Idea</title>
+<style>
+.background {
+    background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 96%;
+    background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+    border-bottom: 2px solid gray;
+}
+body {
+}
+.flex_container {
+    background-color: white;
+    height: 1800px;
+    border-radius: 10px;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 2%;
+    background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+}
+.header {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.tab-list {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.tab-list2 {
+    display: flex;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.item {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    background: linear-gradient(135deg, rgb(250, 248, 248), rgb(206, 202, 202));
+    border: 2px solid grey;
+    border-bottom: 0;
+    border-radius: 10px 10px 0px 0px;
+}
+.item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    padding: 0 20px 0 20px;
+    margin: 5px 0px 5px 5px;
+    border: 2px solid gray;
+    border-radius: 10px 10px 10px 10px;
+}
+.item2:hover {
+    color: red;
+    cursor: pointer;
+}
+.tab-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 2px solid grey;
+    border-radius: 10px 0 10px 10px;
+}
+.tab-content {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px 0px 10px 10px;
+}
+.adjust {
+    padding: 0;
+}
+.hidden {
+    display: none;
+}
+.tab-container .tab-content:first-child {
+    display: block;
+}
+.selected {
+    background: white;
+    background-color: white;
+}
+.selected2 {
+    background: linear-gradient(135deg, rgb(173, 220, 238), rgb(155, 207, 229));
+}
+.menu {
+    position: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border: 2px solid gray;
+    border-bottom: 0;
+    border-radius: 10px 10px 0px 0px;
+    background: radial-gradient(rgb(206, 202, 202), rgb(250, 248, 248));
+}
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 6px) ;
+  transform: rotate(-45deg) translate(-4px, 6px) ;
+}
+.change .bar2 {
+  opacity: 0;
+  transition: .4s;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -8px) ;
+  transform: rotate(45deg) translate(-5px, -8px) ;
+}
+.image1 {
+    display: flex;
+    margin: 2px 5px 0px 2px;
+    height: 75px;
+    width: 75px;
+    border: 2px solid gray;
+    border-radius: 10px 10px 10px 10px;
+}
+.image2 {
+    display: flex;
+    margin: 2px 5px 0px 2px;
+    height: 75px;
+    width: 75px;
+    border: 2px solid rgb(102, 101, 101);
+    border-radius: 50px 50px 50px 50px;
+}
+.lettergroup {
+    display: block;
+}
+.lastnameletter {
+    margin-left: 5px;
+    font-size: 50px;
+}
+.profilegroup {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+.profilebox {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.pagelabel {
+    display: block;
+    font-size: 20px;
+}
+hr {
+    border: 1px solid gray
+}
+
+textarea {
+    display: flex;
+    border-radius: 10px;
+}
+.freewritepage {
+    display: flex;
+}
+.freewritebox {
+    display: absolute;
+    width: 50%;
+}
+.journalstorage {
+    display: absolute;
+    width: 50%;
+}
+.temp {
+    display: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    background-color: pink;
+    border-radius: 10px;
+    text-align: center;
+}
+</style>
+</head>
+    <body>
+        <div class="background">
+        <div class="flex_container">
+        <div class="header" id="myHeader">
+            <img src="newideatemplogo.png" alt="templogo" class="image1">
+            <ul class="tab-list">
+            <li data-tabname="tab1" class="item">NEWSFEED</li>
+            <li data-tabname="tab2" class="item">CONNECTIONS</li>
+            <li data-tabname="tab3" class="item">MEDIA</li>
+            <li data-tabname="tab4" class="item">PLACES</li>
+            <li data-tabname="tab5" class="item">QUOTES/LYRICS</li>
+            <li data-tabname="tab6" class="item">FREEWRITE</li>
+            <li data-tabname="tab7" class="item">TIMELINE</li>
+            </ul>
+            <div class="menu" onclick="myFunction1(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                    </div>
+                </div>
+        <div class="tab-container">
+        <div data-tabname="tab1" class="tab-content">yes yes yes</div>
+        <div data-tabname="tab2" class="tab-content hidden">
+            <div class="lettergroup">
+            <div class="lastnameletter">
+                <strong>K</strong>
+            </div><hr>
+            <div class="profilegroup">
+                <div class="profilebox" style="background-image: url(https://www.google.com)">
+                    <div class="boxcontent">
+                    <img src="../bootstrap/images/pd.JPG" alt="profilepic" class="image2">
+                    Eugene Kim
+                    </div></div>
+                <div class="profilebox" style="background-image: url(https://www.google.com)">
+                    <div class="boxcontent">
+                    <img src="../bootstrap/images/kk.jpg" alt="profilepic" class="image2">
+                    Tiffany Kim
+                    </div></div>
+                    </div>
+                </div>
+            <div class="lettergroup">
+            <div class="lastnameletter">
+                <strong>T</strong>
+            </div><hr>
+            <div class="profilegroup">
+                <div class="profilebox" style="background-image: url(https://www.google.com)">
+                    <div class="boxcontent">
+                    <img src="../widow-site/images/torb.jpg" alt="profilepic" class="image2">
+                    Torbjorn
+                    </div></div>
+                <div class="profilebox" style="background-image: url(https://www.google.com)">
+                    <div class="boxcontent">
+                    <img src="../widow-site/images/tracer.jpg" alt="profilepic" class="image2">
+                    Tracer
+                    </div></div>
+                    </div>
+            </div>
+            <div class="lettergroup">
+            <div class="lastnameletter">
+                <strong>W</strong>
+            </div><hr>
+            <div class="profilegroup">
+                <div class="profilebox" style="background-image: url(https://www.google.com)">
+                    <div class="boxcontent">
+                    <img src="../widow-site/images/widow.png" alt="profilepic" class="image2">
+                    Widowmaker
+                    </div></div>
+                    </div>
+                </div>
+        </div>
+        <div data-tabname="tab3" class="tab-content adjust hidden">
+            <ul class="tab-list2">
+                <li data-tabname="tab8" class="item2 selected2"><u>Photos</u></li>
+                <li data-tabname="tab9" class="item2"><u>Videos</u></li>
+            </ul>
+        </div>
+        <div data-tabname="tab4" class="tab-content hidden">yes yes yes</div>
+        <div data-tabname="tab5" class="tab-content hidden">no no no</div>
+        <div data-tabname="tab6" class="tab-content hidden">
+            <div class="freewritepage">
+            <div class="freewritebox">
+            <div class="pagelabel">Write and Save</div>
+                <textarea rows="22" cols="83">
+                </textarea>
+                </div>
+            <div class="journalstorage">
+            <div class="pagelabel">Journal Log</div>
+                <div class="temp">(log goes here)</div>
+            </div></div>
+        </div>
+        <div data-tabname="tab7" class="tab-content hidden">maybe maybe</div>
+        </div>
+        </div>
+        </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var myheader = document.getElementById("myHeader");
+        var sticky = myheader.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+            myheader.classList.add("sticky");
+            } else {
+            myheader.classList.remove("sticky");
+            }
+        }
+        
+        function myFunction1(x) {
+            x.classList.toggle("change");
+        }
+
+        const tabHeaders = document.querySelectorAll('.item');
+        const tabContents = document.querySelectorAll('.tab-content')
+
+        tabHeaders[0].classList.add('selected');
+        tabContents[0].classList.add('selected');
+
+        const handleClick = (e) => {
+            tabHeaders.forEach(function(header){
+                header.classList.remove('selected');
+            });
+            const el = e.target;
+            el.classList.add('selected');
+            const tabname = el.dataset.tabname;
+            tabContents.forEach(function(tab){
+                if (tab.dataset.tabname === tabname){
+                    tab.classList.remove('hidden');
+                    tab.classList.add('selected');
+                } else {
+                    tab.classList.add('hidden');
+                    tab.classList.remove('selected');
+                }
+            });
+        }
+
+        tabHeaders.forEach(function(tab){
+            tab.addEventListener('click', handleClick);
+        });
+        x.addEventListener('click', myFunction1);
+            </script>
+    </body>
+</html>
