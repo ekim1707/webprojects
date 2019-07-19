@@ -14,9 +14,6 @@
     top: 0;
     width: 96%;
     background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
-    border-bottom: 2px solid gray;
-}
-body {
 }
 .flex_container {
     background-color: white;
@@ -56,22 +53,26 @@ body {
     color: grey;
     background: linear-gradient(135deg, rgb(250, 248, 248), rgb(206, 202, 202));
     border: 2px solid grey;
-    border-bottom: 0;
     border-radius: 10px 10px 0px 0px;
 }
 .item2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: rgb(73, 65, 65);
     padding: 0 20px 0 20px;
     margin: 5px 0px 5px 5px;
     border: 2px solid gray;
     border-radius: 10px 10px 10px 10px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    font-size: 25px;
+    font-weight: 800;
 }
 .item2:hover {
     color: red;
     cursor: pointer;
+    transition: 0.3s;
 }
 .tab-container {
     display: flex;
@@ -79,12 +80,18 @@ body {
     height: 100%;
     border: 2px solid grey;
     border-radius: 10px 0 10px 10px;
+    border-top: 0;
 }
 .tab-content {
     display: block;
     width: 100%;
     padding: 10px;
     border-radius: 10px 0px 10px 10px;
+}
+.tab-content2 {
+    display: block;
+    padding: 10px;
+    margin: 0px 5px 0px 5px;
 }
 .adjust {
     padding: 0;
@@ -98,9 +105,11 @@ body {
 .selected {
     background: white;
     background-color: white;
+    border-bottom: 0;
 }
 .selected2 {
-    background: linear-gradient(135deg, rgb(173, 220, 238), rgb(155, 207, 229));
+    background-color: rgb(245, 118, 118);
+    transition: 0.6s;
 }
 .menu {
     position: flex;
@@ -173,7 +182,13 @@ body {
 hr {
     border: 1px solid gray
 }
-
+hr.shorten {
+    display: block;
+    width: 255px;
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 textarea {
     display: flex;
     border-radius: 10px;
@@ -197,6 +212,11 @@ textarea {
     background-color: pink;
     border-radius: 10px;
     text-align: center;
+}
+.imagebox {
+    display: flex;
+    border: 1px dotted blue;
+    
 }
 </style>
 </head>
@@ -272,9 +292,15 @@ textarea {
         </div>
         <div data-tabname="tab3" class="tab-content adjust hidden">
             <ul class="tab-list2">
-                <li data-tabname="tab8" class="item2 selected2"><u>Photos</u></li>
-                <li data-tabname="tab9" class="item2"><u>Videos</u></li>
-            </ul>
+                <li data-tabname2="tab8" class="item2 selected2">Photos</li>
+                <li data-tabname2="tab9" class="item2">Videos</li>
+            </ul><hr class="shorten">
+            <div data-tabname2="tab8" class="tab-content2 selected">
+                <div class="imagebox">
+                    Image
+                </div>
+            </div>
+            <div data-tabname2="tab9" class="tab-content2 hidden">no no no</div>
         </div>
         <div data-tabname="tab4" class="tab-content hidden">yes yes yes</div>
         <div data-tabname="tab5" class="tab-content hidden">no no no</div>
@@ -313,10 +339,14 @@ textarea {
         }
 
         const tabHeaders = document.querySelectorAll('.item');
-        const tabContents = document.querySelectorAll('.tab-content')
+        const subHeaders = document.querySelectorAll('.item2');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const subContents = document.querySelectorAll('.tab-content2');
 
         tabHeaders[0].classList.add('selected');
+        // subHeader[0].classList.add('selected2');
         tabContents[0].classList.add('selected');
+
 
         const handleClick = (e) => {
             tabHeaders.forEach(function(header){
@@ -336,10 +366,48 @@ textarea {
             });
         }
 
+        const handleClick2 = (e) => {
+            subHeaders.forEach(function(sub){
+                sub.classList.remove('selected2');
+            });
+            const el = e.target;
+            el.classList.add('selected2');
+            const tabname2 = el.dataset.tabname2;
+            subContents.forEach(function(tab){
+                if (tab.dataset.tabname2 === tabname2){
+                    tab.classList.remove('hidden');
+                    tab.classList.add('selected');
+                } else {
+                    tab.classList.add('hidden');
+                    tab.classList.remove('selected');
+                }
+            });
+        }
+
         tabHeaders.forEach(function(tab){
             tab.addEventListener('click', handleClick);
         });
+
+        subHeaders.forEach(function(subtab){
+            subtab.addEventListener('click', handleClick2);
+        });
+
         x.addEventListener('click', myFunction1);
+
+        // const el = document.createElement('div');
+        // el.classList.add('box');
+        // const container = document.querySelector('.box-container');
+        // container.appendChild(el);
+        // const boxes = document.querySelectorAll('.box');
+        // boxes.forEach( (box) => {
+            // box.addEventListener('click',(e)=>{
+                // const currentBG = e.target.style.backgroundColor;
+                // e.target.style.backgroundColor = 
+                //      (currentBG==='orange') ? '#bada55':
+                //      (currentBG==='lavender') ? 'orange':
+                //      'lavender'
+                // });
+            // });
             </script>
     </body>
 </html>
