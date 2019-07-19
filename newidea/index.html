@@ -14,6 +14,7 @@
     top: 0;
     width: 96%;
     background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+    z-index: 10;
 }
 .flex_container {
     background-color: white;
@@ -40,10 +41,9 @@
     align-items: stretch;
 }
 .tab-list2 {
-    display: flex;
+    display: inline-block;
     list-style-type: none;
     padding-left: 0;
-    margin-bottom: 0;
 }
 .item {
     display: flex;
@@ -56,11 +56,9 @@
     border-radius: 10px 10px 0px 0px;
 }
 .item2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     color: rgb(73, 65, 65);
-    padding: 0 20px 0 20px;
+    padding: 0 18px 0 17px;
     margin: 5px 0px 5px 5px;
     border: 2px solid gray;
     border-radius: 10px 10px 10px 10px;
@@ -89,9 +87,15 @@
     border-radius: 10px 0px 10px 10px;
 }
 .tab-content2 {
-    display: block;
+    display: flex;
+    position: absolute;
+    width: 300px;
+    height: 800px;
     padding: 10px;
+    left: 290px;
+    top: 0;
     margin: 0px 5px 0px 5px;
+    border: 1px solid red;
 }
 .adjust {
     padding: 0;
@@ -197,11 +201,9 @@ textarea {
     display: flex;
 }
 .freewritebox {
-    display: absolute;
     width: 50%;
 }
 .journalstorage {
-    display: absolute;
     width: 50%;
 }
 .temp {
@@ -213,10 +215,25 @@ textarea {
     border-radius: 10px;
     text-align: center;
 }
+.toggle-center {
+    display: flex;
+    position: absolute;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-left: 6px;
+    width: 249px;
+    height: 1685px;
+}
 .imagebox {
     display: flex;
-    border: 1px dotted blue;
-    /* new */
+    position: absolute;
+    color: blue;
+    border: 2px dotted blue;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
 }
 </style>
 </head>
@@ -294,7 +311,10 @@ textarea {
             <ul class="tab-list2">
                 <li data-tabname2="tab8" class="item2 selected2">Photos</li>
                 <li data-tabname2="tab9" class="item2">Videos</li>
-            </ul><hr class="shorten">
+            </ul>
+            <!-- <hr class="shorten"> -->
+        <div class="toggle-center">
+        </div>
             <div data-tabname2="tab8" class="tab-content2 selected">
                 <div class="imagebox">
                     Image
