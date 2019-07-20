@@ -58,7 +58,7 @@
 .item2 {
     display: inline-block;
     color: rgb(73, 65, 65);
-    padding: 0 18px 0 17px;
+    padding: 0 17px 0 17px;
     margin: 5px 0px 5px 5px;
     border: 2px solid gray;
     border-radius: 10px 10px 10px 10px;
@@ -68,6 +68,24 @@
     font-weight: 800;
 }
 .item2:hover {
+    color: red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.item3 {
+    background-color: white;
+    display: block;
+    color: rgb(73, 65, 65);
+    padding: 0 7px 0 7px;
+    margin: 2px;
+    border: 2px solid gray;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: .5px;
+    font-size: 15px;
+    font-weight: 800;
+}
+.item3:hover {
     color: red;
     cursor: pointer;
     transition: 0.3s;
@@ -89,13 +107,13 @@
 .tab-content2 {
     display: flex;
     position: absolute;
-    width: 300px;
-    height: 800px;
-    padding: 10px;
+    flex-direction: column;
+    width: 1090px;
+    height: 1730px;
+    padding: 0 10px 10px 10px;
     left: 290px;
-    top: 0;
-    margin: 0px 5px 0px 5px;
-    border: 1px solid red;
+    margin-top: -57px;
+    /* border: 1px solid red; */
 }
 .adjust {
     padding: 0;
@@ -188,7 +206,7 @@ hr {
 }
 hr.shorten {
     display: block;
-    width: 255px;
+    width: 100px;
     margin-left: 5px;
     margin-top: 0;
     margin-bottom: 0;
@@ -221,19 +239,40 @@ textarea {
     border: 2px solid gray;
     border-radius: 10px;
     margin-top: -10px;
-    margin-left: 6px;
-    width: 249px;
+    margin-left: 5px;
+    width: 250px;
     height: 1685px;
+    background-color: lightgray;
+}
+.imagesection {
+    display: flex;
+    flex-direction: row;
 }
 .imagebox {
-    display: flex;
-    position: absolute;
+    display: inline-block;
     color: blue;
     border: 2px dotted blue;
     width: 100px;
     height: 100px;
-    justify-content: center;
-    align-items: center;
+    margin: 10px 5px 5px 5px;
+    text-align: center;
+}
+.image3 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px 5px 5px 5px;
+    border: 2px dotted blue;
+}
+.month {
+    display: block;
+    font-size: 30px;
+    top: 0;
+}
+.imagesort {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 5px;
 }
 </style>
 </head>
@@ -314,11 +353,78 @@ textarea {
             </ul>
             <!-- <hr class="shorten"> -->
         <div class="toggle-center">
+            <ul class="imagesort">
+                <li data-tabname3="tab1" class="item3">By List</li>
+                <li data-tabname3="tab2" class="item3">By Category</li>
+                <li data-tabname3="tab3" class="item3 selected2">By Date</li>
+            </ul>
         </div>
             <div data-tabname2="tab8" class="tab-content2 selected">
-                <div class="imagebox">
-                    Image
+                <div class="month">
+                <strong>January</strong> 
                 </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3">
+                <div class="imagebox">
+                    Empty
+                </div>
+                </div>
+                <div class="month">
+                <strong>February</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3">
+                <div class="imagebox">
+                    Empty
+                </div>
+                </div>
+                <div class="month">
+                <strong>March</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">
+                    Empty
+                </div>
+                </div>
+                <div class="month">
+                <strong>April</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>May</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>June</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>July</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>August</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>September</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>October</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>November</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>December</strong> 
+                </div>
+                <hr class="shorten">
             </div>
             <div data-tabname2="tab9" class="tab-content2 hidden">no no no</div>
         </div>
