@@ -10,10 +10,11 @@
     background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
 }
 .sticky {
+    display: block;
     position: fixed;
     top: 0;
     width: 96%;
-    background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+    background: transparent;
     z-index: 10;
 }
 .flex_container {
@@ -24,12 +25,13 @@
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
-    background: linear-gradient(135deg, rgb(162, 213, 233), rgb(17, 169, 230));
+    background: transparent;
 }
 .header {
     display: flex;
     justify-content: stretch;
     align-items: stretch;
+    background: lightblue;
 }
 .tab-list {
     display: flex;
@@ -51,9 +53,19 @@
     justify-content: center;
     align-items: center;
     color: grey;
+    font-weight: bolder;
+    font-size: 20px;
     background: linear-gradient(135deg, rgb(250, 248, 248), rgb(206, 202, 202));
     border: 2px solid grey;
     border-radius: 10px 10px 0px 0px;
+    border-left: 0;
+}
+.item:hover {
+    background: linear-gradient(135deg, rgb(247, 162, 162), rgb(245, 118, 118));
+    color: rgb(245, 220, 224);
+    transition: 2s;
+    font-size: 22px;
+    cursor: pointer;
 }
 .item2 {
     display: inline-block;
@@ -70,7 +82,7 @@
 .item2:hover {
     color: red;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 1s;
 }
 .item3 {
     background-color: white;
@@ -88,7 +100,7 @@
 .item3:hover {
     color: red;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 1s;
 }
 .tab-container {
     display: flex;
@@ -97,6 +109,8 @@
     border: 2px solid grey;
     border-radius: 10px 0 10px 10px;
     border-top: 0;
+    padding: 23px 0 0 0;
+    background-color: white;
 }
 .tab-content {
     display: block;
@@ -129,6 +143,13 @@
     background-color: white;
     border-bottom: 0;
 }
+.item.selected:hover {
+    background: white;
+    background-color: white;
+    color: grey;
+    transition: 2s;
+    font-size: 22px;
+}
 .selected2 {
     background-color: rgb(245, 118, 118);
     transition: 0.6s;
@@ -137,17 +158,18 @@
     position: flex;
     justify-content: center;
     align-items: center;
-    padding: 25px;
+    padding: 15px;
     border: 2px solid gray;
     border-bottom: 0;
+    border-left: 0;
     border-radius: 10px 10px 0px 0px;
     background: radial-gradient(rgb(206, 202, 202), rgb(250, 248, 248));
 }
 .bar1, .bar2, .bar3 {
-  width: 25px;
-  height: 2px;
+  width: 15px;
+  height: 1px;
   background-color: black;
-  margin: 6px 0;
+  margin: 3px 0;
   transition: 0.4s;
 }
 .change .bar1 {
@@ -162,9 +184,14 @@
   -webkit-transform: rotate(45deg) translate(-5px, -8px) ;
   transform: rotate(45deg) translate(-5px, -8px) ;
 }
+.imgbox {
+    height: 40px;
+    width: 70px;
+    z-index: 15;
+}
 .image1 {
     display: flex;
-    margin: 2px 5px 0px 2px;
+    margin: -5px -5px;
     height: 75px;
     width: 75px;
     border: 2px solid gray;
@@ -280,7 +307,9 @@ textarea {
         <div class="background">
         <div class="flex_container">
         <div class="header" id="myHeader">
-            <img src="newideatemplogo.png" alt="templogo" class="image1">
+            <div class="imgbox">
+            <img src="newideatemplogo.png" alt="templogo" class="image1" id="logoimg">
+            </div>
             <ul class="tab-list">
             <li data-tabname="tab1" class="item">NEWSFEED</li>
             <li data-tabname="tab2" class="item">CONNECTIONS</li>
@@ -347,12 +376,12 @@ textarea {
                 </div>
         </div>
         <div data-tabname="tab3" class="tab-content adjust hidden">
-            <ul class="tab-list2">
+            <ul class="tab-list2" id="myHeader">
                 <li data-tabname2="tab8" class="item2 selected2">Photos</li>
                 <li data-tabname2="tab9" class="item2">Videos</li>
             </ul>
             <!-- <hr class="shorten"> -->
-        <div class="toggle-center">
+        <div class="toggle-center" id="myHeader">
             <ul class="imagesort">
                 <li data-tabname3="tab1" class="item3">By List</li>
                 <li data-tabname3="tab2" class="item3">By Category</li>
@@ -450,12 +479,19 @@ textarea {
         window.onscroll = function() {myFunction()};
         
         var myheader = document.getElementById("myHeader");
+        var myimage = document.getElementById("logoimg");
         var sticky = myheader.offsetTop;
+        const tabHeaders = document.querySelectorAll('.item');
+        const subHeaders = document.querySelectorAll('.item2');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const subContents = document.querySelectorAll('.tab-content2');
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
+            myimage.style.marginTop = "0";
             myheader.classList.add("sticky");
             } else {
+            myimage.style.marginTop = "";
             myheader.classList.remove("sticky");
             }
         }
@@ -463,11 +499,6 @@ textarea {
         function myFunction1(x) {
             x.classList.toggle("change");
         }
-
-        const tabHeaders = document.querySelectorAll('.item');
-        const subHeaders = document.querySelectorAll('.item2');
-        const tabContents = document.querySelectorAll('.tab-content');
-        const subContents = document.querySelectorAll('.tab-content2');
 
         tabHeaders[0].classList.add('selected');
         // subHeader[0].classList.add('selected2');
