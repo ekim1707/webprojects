@@ -31,7 +31,7 @@
     display: flex;
     justify-content: stretch;
     align-items: stretch;
-    background: lightblue;
+    background: linear-gradient(135deg, rgb(168, 209, 226), rgb(132, 202, 229));
 }
 .tab-list {
     display: flex;
@@ -69,6 +69,7 @@
 }
 .item2 {
     display: inline-block;
+    z-index: 15;
     color: rgb(73, 65, 65);
     padding: 0 17px 0 17px;
     margin: 5px 0px 5px 5px;
@@ -152,6 +153,10 @@
 }
 .selected2 {
     background-color: rgb(245, 118, 118);
+    transition: 0.6s;
+}
+.selected3 {
+    background-color: lightgray;
     transition: 0.6s;
 }
 .menu {
@@ -261,14 +266,13 @@ textarea {
     text-align: center;
 }
 .toggle-center {
-    display: flex;
     position: absolute;
     border: 2px solid gray;
     border-radius: 10px;
     margin-top: -10px;
     margin-left: 5px;
     width: 250px;
-    height: 1685px;
+    height: 514px;
     background-color: lightgray;
 }
 .imagesection {
@@ -291,6 +295,10 @@ textarea {
     margin: 10px 5px 5px 5px;
     border: 2px dotted blue;
 }
+iframe {
+    display: inline-block;
+    margin: 10px 5px 5px 5px;
+}
 .month {
     display: block;
     font-size: 30px;
@@ -300,6 +308,29 @@ textarea {
     list-style-type: none;
     padding-left: 0;
     margin: 5px;
+}
+.item4 {
+    display: block;
+    background-color: rgb(128, 123, 123);
+    color: white;
+    clear: both;
+    margin: 10px 10px 5px 10px;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+}
+select {
+    display: block;
+    font-family: Arial;
+    background-color: skyblue;
+    color: white;
+    width: 224px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: bolder;
 }
 </style>
 </head>
@@ -376,25 +407,45 @@ textarea {
                 </div>
         </div>
         <div data-tabname="tab3" class="tab-content adjust hidden">
-            <ul class="tab-list2" id="myHeader">
-                <li data-tabname2="tab8" class="item2 selected2">Photos</li>
-                <li data-tabname2="tab9" class="item2">Videos</li>
+            <ul class="tab-list2" id="mySticky1">
+                <li class="item2 selected2" id="phototoggle">Photos</li>
+                <li class="item2 selected2" id="videotoggle">Videos</li>
             </ul>
             <!-- <hr class="shorten"> -->
-        <div class="toggle-center" id="myHeader">
+        <div class="toggle-center" id="mySticky2">
             <ul class="imagesort">
-                <li data-tabname3="tab1" class="item3">By List</li>
-                <li data-tabname3="tab2" class="item3">By Category</li>
-                <li data-tabname3="tab3" class="item3 selected2">By Date</li>
+                <li data-tabname2="tab1" class="item3 selected2">By List</li>
+                <li data-tabname2="tab2" class="item3">By Category</li>
+                <li data-tabname2="tab3" class="item3">By Date</li>
             </ul>
+            <div class="listtoggle selected3">
+            <div class="item4">List A</div>
+            <select id="selectbox1">
+                <option value="list1">Younger Years</option>
+                <option value="list2">Nostalgic</option>
+                <option value="list3">Favorite Music Videos</option>
+                <option value="list4">College</option>
+            </select>
+            <div class="item4">List B</div>
+            <select id="selectbox2">
+                    <option value="list1">Younger Years</option>
+                    <option value="list2">Nostalgic</option>
+                    <option value="list3">Favorite Music Videos</option>
+                    <option value="list4">College</option>
+                </select>
+                </div>
         </div>
-            <div data-tabname2="tab8" class="tab-content2 selected">
+            <div data-tabname2="tab1" class="tab-content2 selected"></div>
+
+            <div data-tabname2="tab2" class="tab-content2 hidden"></div>
+            <div data-tabname2="tab3" class="tab-content2 hidden">
                 <div class="month">
                 <strong>January</strong> 
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3">
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos">
+                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
                 <div class="imagebox">
                     Empty
                 </div>
@@ -404,7 +455,7 @@ textarea {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos">
                 <div class="imagebox">
                     Empty
                 </div>
@@ -455,7 +506,6 @@ textarea {
                 </div>
                 <hr class="shorten">
             </div>
-            <div data-tabname2="tab9" class="tab-content2 hidden">no no no</div>
         </div>
         <div data-tabname="tab4" class="tab-content hidden">yes yes yes</div>
         <div data-tabname="tab5" class="tab-content hidden">no no no</div>
@@ -479,20 +529,34 @@ textarea {
         window.onscroll = function() {myFunction()};
         
         var myheader = document.getElementById("myHeader");
+        var mysticky1 = document.getElementById("mySticky1");
+        var mysticky2 = document.getElementById("mySticky2");
         var myimage = document.getElementById("logoimg");
         var sticky = myheader.offsetTop;
         const tabHeaders = document.querySelectorAll('.item');
         const subHeaders = document.querySelectorAll('.item2');
+        const subHeaders2 = document.querySelectorAll('.item3');
+        const imglists = document.querySelector('.listtoggle');
         const tabContents = document.querySelectorAll('.tab-content');
         const subContents = document.querySelectorAll('.tab-content2');
+        const photos = document.querySelectorAll('.image3');
+        const videos = document.querySelectorAll('iframe');
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
             myimage.style.marginTop = "0";
             myheader.classList.add("sticky");
+            mysticky1.classList.add("sticky");
+            mysticky1.style.top = "75px";
+            mysticky2.style.top = "134px";
+            mysticky2.style.position = "fixed";
             } else {
             myimage.style.marginTop = "";
             myheader.classList.remove("sticky");
+            mysticky1.classList.remove("sticky");
+            mysticky2.style.position = "absolute";
+            mysticky1.style.top = "";
+            mysticky2.style.top = "";
             }
         }
         
@@ -501,7 +565,6 @@ textarea {
         }
 
         tabHeaders[0].classList.add('selected');
-        // subHeader[0].classList.add('selected2');
         tabContents[0].classList.add('selected');
 
 
@@ -524,12 +587,50 @@ textarea {
         }
 
         const handleClick2 = (e) => {
-            subHeaders.forEach(function(sub){
+            const el = e.target;
+            if (el.classList.contains("selected2") && el.id === "phototoggle"){
+                el.classList.remove('selected2');
+                el.classList.add('not-selected');
+                photos.forEach(function(photo){
+                    photo.classList.add("hidden");
+                });
+            } else if (el.classList.contains("not-selected") && el.id === "phototoggle") {
+                el.classList.remove('not-selected');
+                el.classList.add('selected2');
+                photos.forEach(function(photo){
+                    photo.classList.remove("hidden");
+                });
+            } else if (el.classList.contains("selected2") && el.id === "videotoggle"){
+                el.classList.remove('selected2');
+                el.classList.add('not-selected');
+                videos.forEach(function(video){
+                    video.classList.add("hidden");
+                });
+            } else if (el.classList.contains("not-selected") && el.id === "videotoggle"){
+                el.classList.remove('not-selected');
+                el.classList.add('selected2');
+                videos.forEach(function(video){
+                    video.classList.remove("hidden");
+                });
+            }
+        }
+
+        const handleClick3 = (e) => {
+            subHeaders2.forEach(function(sub){
                 sub.classList.remove('selected2');
             });
             const el = e.target;
             el.classList.add('selected2');
+            imglists.classList.remove('selected3');
+            imglists.classList.add('hidden');
             const tabname2 = el.dataset.tabname2;
+            if (tabname2 === "tab1") {
+                imglists.classList.remove("hidden");
+                imglists.classList.add("selected3");
+            } else {
+                imglists.classList.remove("selected3");
+                imglists.classList.add("hidden");
+            }
             subContents.forEach(function(tab){
                 if (tab.dataset.tabname2 === tabname2){
                     tab.classList.remove('hidden');
@@ -547,6 +648,10 @@ textarea {
 
         subHeaders.forEach(function(subtab){
             subtab.addEventListener('click', handleClick2);
+        });
+
+        subHeaders2.forEach(function(subtab){
+            subtab.addEventListener('click', handleClick3);
         });
 
         x.addEventListener('click', myFunction1);
