@@ -122,7 +122,7 @@
 .tab-content2 {
     display: flex;
     position: absolute;
-    flex-direction: column;
+    flex-direction: row;
     width: 1090px;
     height: 1730px;
     padding: 0 10px 10px 10px;
@@ -332,6 +332,17 @@ select {
     margin-bottom: 5px;
     font-weight: bolder;
 }
+.tab-content3 {
+    display: inline-block;
+    width: 50%;
+    padding: 15px;
+}
+.gallery {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bolder;
+    color: pink;
+}
 </style>
 </head>
     <body>
@@ -419,14 +430,14 @@ select {
                 <li data-tabname2="tab3" class="item3">By Date</li>
             </ul>
             <div class="listtoggle selected3">
-            <div class="item4">List A</div>
+            <div class="item4">Gallery A</div>
             <select id="selectbox1">
                 <option value="list1">Younger Years</option>
                 <option value="list2">Nostalgic</option>
                 <option value="list3">Favorite Music Videos</option>
                 <option value="list4">College</option>
             </select>
-            <div class="item4">List B</div>
+            <div class="item4">Gallery B</div>
             <select id="selectbox2">
                     <option value="list1">Younger Years</option>
                     <option value="list2">Nostalgic</option>
@@ -436,9 +447,10 @@ select {
                 </div>
         </div>
             <div data-tabname2="tab1" class="tab-content2 selected"></div>
-
             <div data-tabname2="tab2" class="tab-content2 hidden"></div>
             <div data-tabname2="tab3" class="tab-content2 hidden">
+                <div class="tab-content3" id="A">
+                <div class="gallery">Gallery A</div>
                 <div class="month">
                 <strong>January</strong> 
                 </div>
@@ -505,6 +517,26 @@ select {
                 <strong>December</strong> 
                 </div>
                 <hr class="shorten">
+                </div>
+            <div class="tab-content3" id="B">
+                <div class="gallery">Gallery B</div>
+                <div class="month">
+                <strong>September</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>October</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>November</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="month">
+                <strong>December</strong> 
+                </div>
+                <hr class="shorten">
+            </div>
             </div>
         </div>
         <div data-tabname="tab4" class="tab-content hidden">yes yes yes</div>
@@ -541,6 +573,7 @@ select {
         const subContents = document.querySelectorAll('.tab-content2');
         const photos = document.querySelectorAll('.image3');
         const videos = document.querySelectorAll('iframe');
+        const galleryContents = document.querySelectorAll('.tab-content3');
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
@@ -621,16 +654,7 @@ select {
             });
             const el = e.target;
             el.classList.add('selected2');
-            imglists.classList.remove('selected3');
-            imglists.classList.add('hidden');
             const tabname2 = el.dataset.tabname2;
-            if (tabname2 === "tab1") {
-                imglists.classList.remove("hidden");
-                imglists.classList.add("selected3");
-            } else {
-                imglists.classList.remove("selected3");
-                imglists.classList.add("hidden");
-            }
             subContents.forEach(function(tab){
                 if (tab.dataset.tabname2 === tabname2){
                     tab.classList.remove('hidden');
@@ -641,6 +665,20 @@ select {
                 }
             });
         }
+
+        const toggleGallery = (e) => {
+            galleryContents.forEach(function(display){
+                display.style.position = "fixed";
+                alert('hi');
+            });
+            el = e.target;
+            el.style.position = "";
+            if (el !== galleryContents){
+                galleryContents.forEach(function(display){
+                display.style.position = "";
+            });
+        }
+    }
 
         tabHeaders.forEach(function(tab){
             tab.addEventListener('click', handleClick);
@@ -655,6 +693,10 @@ select {
         });
 
         x.addEventListener('click', myFunction1);
+
+        galleryContents.forEach(function(gallery){
+            gallery.addEventListener('mouseover', toggleGallery);
+        })
 
         // const el = document.createElement('div');
         // el.classList.add('box');
