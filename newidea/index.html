@@ -18,14 +18,13 @@
     z-index: 10;
 }
 .flex_container {
-    background-color: white;
-    height: 1800px;
+    width: 100vw;
+    height: 140vh;
     border-radius: 10px;
     padding-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 2%;
-    background: transparent;
 }
 .header {
     display: flex;
@@ -122,13 +121,13 @@
 .tab-content2 {
     display: flex;
     position: absolute;
-    flex-direction: row;
-    width: 1090px;
-    height: 1730px;
-    padding: 0 10px 10px 10px;
-    left: 290px;
+    flex-flow: row;
+    justify-content: stretch;
+    align-items: stretch;
+    width: 1110px;
+    height: 132vh;
+    left: 292px;
     margin-top: -57px;
-    /* border: 1px solid red; */
 }
 .adjust {
     padding: 0;
@@ -177,18 +176,6 @@
   margin: 3px 0;
   transition: 0.4s;
 }
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-4px, 6px) ;
-  transform: rotate(-45deg) translate(-4px, 6px) ;
-}
-.change .bar2 {
-  opacity: 0;
-  transition: .4s;
-}
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-5px, -8px) ;
-  transform: rotate(45deg) translate(-5px, -8px) ;
-}
 .imgbox {
     height: 40px;
     width: 70px;
@@ -234,11 +221,18 @@
     font-size: 20px;
 }
 hr {
-    border: 1px solid gray
+    border: 1px solid gray;
 }
 hr.shorten {
     display: block;
     width: 100px;
+    margin-left: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+hr.shorten1 {
+    display: block;
+    width: 400px;
     margin-left: 5px;
     margin-top: 0;
     margin-bottom: 0;
@@ -272,21 +266,22 @@ textarea {
     margin-top: -10px;
     margin-left: 5px;
     width: 250px;
-    height: 514px;
+    height: 78vh;
     background-color: lightgray;
 }
 .imagesection {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
 }
 .imagebox {
-    display: inline-block;
+    display: flex;
     color: blue;
     border: 2px dotted blue;
     width: 100px;
     height: 100px;
     margin: 10px 5px 5px 5px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .image3 {
     display: inline-block;
@@ -311,18 +306,47 @@ iframe {
 }
 .item4 {
     display: block;
-    background-color: rgb(128, 123, 123);
-    color: white;
+    background-color: white;
+    color: rgb(128, 123, 123);
     clear: both;
     margin: 10px 10px 5px 10px;
     font-size: 24px;
     text-align: center;
     padding: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+.on {
+    background-color: rgb(128, 123, 123);
+    color: white;
+    opacity: 1;
+}
+.fade-in {
+    -webkit-animation: fadein 0.5s linear forwards;
+    animation: fadein 0.5s linear forwards;
+    opacity: 0;
+}
+.fade-out {
+    -webkit-animation: fadeout 0.5s linear forwards;
+    animation: fadeout 0.5s linear forwards;
+    opacity: 1;
+}
+@-webkit-keyframes fadein {
+  100% { opacity: 1; }
+}
+@keyframes fadein {
+  100% { opacity: 1; }
+}
+@-webkit-keyframes fadeout {
+  100% { opacity: 0; }
+}
+@keyframes fadeout {
+  100% { opacity: 0; }
 }
 select {
     display: block;
     font-family: Arial;
-    background-color: skyblue;
+    background-color: rgb(110, 174, 238);
     color: white;
     width: 224px;
     height: 40px;
@@ -333,15 +357,31 @@ select {
     font-weight: bolder;
 }
 .tab-content3 {
-    display: inline-block;
-    width: 50%;
-    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 135vh;
+    width: 100%;
+    overflow: auto;
+    transition: 1s;
+}
+.B {
+    width: 0;
 }
 .gallery {
     font-size: 40px;
     text-align: center;
     font-weight: bolder;
     color: pink;
+}
+a {
+    display: inline-block;
+    color: blue;
+    transition: 1s;
+    width: 2.6vw;
+    text-align: center;
+    margin: auto;
 }
 </style>
 </head>
@@ -430,28 +470,68 @@ select {
                 <li data-tabname2="tab3" class="item3">By Date</li>
             </ul>
             <div class="listtoggle selected3">
-            <div class="item4">Gallery A</div>
-            <select id="selectbox1">
-                <option value="list1">Younger Years</option>
-                <option value="list2">Nostalgic</option>
-                <option value="list3">Favorite Music Videos</option>
-                <option value="list4">College</option>
-            </select>
-            <div class="item4">Gallery B</div>
-            <select id="selectbox2">
-                    <option value="list1">Younger Years</option>
-                    <option value="list2">Nostalgic</option>
-                    <option value="list3">Favorite Music Videos</option>
-                    <option value="list4">College</option>
+            <div class="item4 on" id="A">Gallery A</div>
+            <select data-tabname2="tab1" class="selectbox1" id="selectbox1">
                 </select>
+            <select data-tabname2="tab2" class="selectbox2 hidden" id="selectbox2">
+                </select>
+            <!-- <select data-tabname2="tab3" class="selectbox3 hidden" id="selectbox3">
+                </select> -->
+            <a href="#1a">Jan</a>
+            <a href="#2a">Feb</a>
+            <a href="#3a">Mar</a>
+            <a href="#4a">Apr</a>
+            <a href="#5a">May</a>
+            <a href="#6a">Jun</a>
+            <a href="#7a">Jul</a>
+            <a href="#8a">Aug</a>
+            <a href="#9a">Sep</a>
+            <a href="#10a">Oct</a>
+            <a href="#11a">Nov</a>
+            <a href="#12a">Dec</a>
+            <div class="datetoggle"></div>
+            <div class="item4" id="B">Gallery B</div>
+            <select data-tabname2="tab1" class="selectbox1" id="selectbox1">
+                </select>
+            <select data-tabname2="tab2" class="selectbox2 hidden" id="selectbox2">
+                </select>
+            <!-- <select data-tabname2="tab3" class="selectbox3 hidden" id="selectbox3">
+                </select> -->
+            <a href="#1b">Jan</a>
+            <a href="#2b">Feb</a>
+            <a href="#3b">Mar</a>
+            <a href="#4b">Apr</a>
+            <a href="#5b">May</a>
+            <a href="#6b">Jun</a>
+            <a href="#7b">Jul</a>
+            <a href="#8b">Aug</a>
+            <a href="#9b">Sep</a>
+            <a href="#10b">Oct</a>
+            <a href="#11b">Nov</a>
+            <a href="#12b">Dec</a>
+            <div class="datetoggle"></div>
                 </div>
         </div>
-            <div data-tabname2="tab1" class="tab-content2 selected"></div>
-            <div data-tabname2="tab2" class="tab-content2 hidden"></div>
-            <div data-tabname2="tab3" class="tab-content2 hidden">
-                <div class="tab-content3" id="A">
+            <div data-tabname2="tab1" class="tab-content2 selected">
+                <div class="tab-content3 A first" id="A">
                 <div class="gallery">Gallery A</div>
-                <div class="month">
+                </div>
+                <div class="tab-content3 B first" id="B">
+                <div class="gallery">Gallery B</div>
+                </div>
+            </div>
+            <div data-tabname2="tab2" class="tab-content2 hidden">
+            <div class="tab-content3 A second" id="A">
+                    <div class="gallery">Gallery A</div>
+                    </div>
+                    <div class="tab-content3 B second" id="B">
+                    <div class="gallery">Gallery B</div>
+                    </div>
+                </div>
+            <div data-tabname2="tab3" class="tab-content2 hidden">
+                <div class="tab-content3 A" id="A">
+                <div class="gallery">Gallery A</div>
+                <div class="month" id="1a">
                 <strong>January</strong> 
                 </div>
                 <hr class="shorten">
@@ -462,7 +542,160 @@ select {
                     Empty
                 </div>
                 </div>
-                <div class="month">
+                <div class="month" id="2a">
+                <strong>February</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos">
+                <div class="imagebox">
+                    Empty
+                </div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="3a">
+                <strong>March</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">
+                    Empty
+                </div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="4a">
+                <strong>April</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="5a">
+                <strong>May</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="6a">
+                <strong>June</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="7a">
+                <strong>July</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="8a">
+                <strong>August</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="9a">
+                <strong>September</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="10a">
+                <strong>October</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="11a">
+                <strong>November</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="12a">
+                <strong>December</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                </div>
+            <div class="tab-content3 B" id="B">
+                <div class="gallery">Gallery B</div>
+                <div class="month" id="1b">
+                <strong>January</strong> 
+                </div>
+                <hr class="shorten">
+                <div class="imagesection">
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos">
+                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
+                <div class="imagebox">
+                    Empty
+                </div>
+                </div>
+                <div class="month" id="2b">
                 <strong>February</strong> 
                 </div>
                 <hr class="shorten">
@@ -472,7 +705,7 @@ select {
                     Empty
                 </div>
                 </div>
-                <div class="month">
+                <div class="month" id="3b">
                 <strong>March</strong> 
                 </div>
                 <hr class="shorten">
@@ -480,62 +713,122 @@ select {
                 <div class="imagebox">
                     Empty
                 </div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
                 </div>
-                <div class="month">
+                <div class="month" id="4b">
                 <strong>April</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="5b">
                 <strong>May</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="6b">
                 <strong>June</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="7b">
                 <strong>July</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="8b">
                 <strong>August</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="9b">
                 <strong>September</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="10b">
                 <strong>October</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="11b">
                 <strong>November</strong> 
                 </div>
                 <hr class="shorten">
-                <div class="month">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                </div>
+                <div class="month" id="12b">
                 <strong>December</strong> 
                 </div>
                 <hr class="shorten">
+                <div class="imagesection">
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
+                <div class="imagebox">Empty</div>
                 </div>
-            <div class="tab-content3" id="B">
-                <div class="gallery">Gallery B</div>
-                <div class="month">
-                <strong>September</strong> 
                 </div>
-                <hr class="shorten">
-                <div class="month">
-                <strong>October</strong> 
-                </div>
-                <hr class="shorten">
-                <div class="month">
-                <strong>November</strong> 
-                </div>
-                <hr class="shorten">
-                <div class="month">
-                <strong>December</strong> 
-                </div>
-                <hr class="shorten">
             </div>
             </div>
         </div>
@@ -571,9 +864,61 @@ select {
         const imglists = document.querySelector('.listtoggle');
         const tabContents = document.querySelectorAll('.tab-content');
         const subContents = document.querySelectorAll('.tab-content2');
+        const imgContents = document.querySelectorAll('.tab-content3');
+        const imgSelector = document.querySelectorAll('.item4');
         const photos = document.querySelectorAll('.image3');
         const videos = document.querySelectorAll('iframe');
-        const galleryContents = document.querySelectorAll('.tab-content3');
+        const listSelect = document.querySelectorAll('.selectbox1');
+        const catSelect = document.querySelectorAll('.selectbox2');
+        const dateToggle = document.querySelector('.datetoggle');
+        const galleries1 = document.querySelectorAll('.first');
+        const galleries2 = document.querySelectorAll('.second');
+
+        let imgLists = ['Old Oak Dr. 1995', 'Random Korea Hangouts', 'Hillsong Music VODs'];
+        let imgCategories = ['Younger Years', 'Nostalgic', 'Favorite Music Videos', 'College'];
+
+        listSelect.forEach((list) => {
+            imgLists.forEach((value) => {
+                const option = document.createElement('option');
+                option.innerText = `${value}`;
+                list.appendChild(option);
+            });
+        });
+
+        catSelect.forEach((list) => {
+            imgCategories.forEach((value) => {
+                const option = document.createElement('option');
+                option.innerText = `${value}`;
+                list.appendChild(option);
+            });
+        });
+
+        galleries1.forEach((gallery) => {
+            imgLists.forEach((value) => {
+                const newDiv = document.createElement('div');
+                newDiv.classList.add('month');
+                newDiv.style.fontSize = "20px";
+                newDiv.innerText = `${value}`;
+                const hrLine = document.createElement('hr');
+                hrLine.classList.add('shorten1');
+                gallery.appendChild(newDiv);
+                gallery.appendChild(hrLine);
+            });
+
+        });
+
+        galleries2.forEach((gallery) => {
+            imgCategories.forEach((value) => {
+                const newDiv = document.createElement('div');
+                newDiv.classList.add('month');
+                newDiv.style.fontSize = "20px";
+                newDiv.innerText = `${value}`;
+                const hrLine = document.createElement('hr');
+                hrLine.classList.add('shorten1');
+                gallery.appendChild(newDiv);
+                gallery.appendChild(hrLine);
+            });
+        });
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
@@ -591,10 +936,6 @@ select {
             mysticky1.style.top = "";
             mysticky2.style.top = "";
             }
-        }
-        
-        function myFunction1(x) {
-            x.classList.toggle("change");
         }
 
         tabHeaders[0].classList.add('selected');
@@ -664,21 +1005,77 @@ select {
                     tab.classList.remove('selected');
                 }
             });
+            listSelect.forEach((list) => {
+                list.classList.remove('hidden');
+            })
+            catSelect.forEach((list) => {
+                list.classList.remove('hidden');
+            })
+            dateToggle.classList.remove('hidden');
+            if (listSelect[0].dataset.tabname2 === tabname2){
+                catSelect[0].classList.add('hidden');
+                catSelect[1].classList.add('hidden');
+                dateToggle.classList.add('hidden');
+            } else if (catSelect[0].dataset.tabname2 === tabname2){
+                listSelect[0].classList.add('hidden');
+                listSelect[1].classList.add('hidden');
+                dateToggle.classList.add('hidden');
+            } else {
+                listSelect[0].classList.add('hidden');
+                listSelect[1].classList.add('hidden');
+                catSelect[0].classList.add('hidden');
+                catSelect[1].classList.add('hidden');
+            }         
         }
 
-        const toggleGallery = (e) => {
-            galleryContents.forEach(function(display){
-                display.style.position = "fixed";
-                alert('hi');
-            });
+        const imgSelect = (e) => {
             el = e.target;
-            el.style.position = "";
-            if (el !== galleryContents){
-                galleryContents.forEach(function(display){
-                display.style.position = "";
-            });
+            if ((el.id === 'A') && (el.classList.contains('on') === true)) {
+                imgContents[0].classList.add('fade-out');
+                imgContents[2].classList.add('fade-out');
+                imgContents[4].classList.add('fade-out');
+                imgContents[0].classList.remove('fade-in');
+                imgContents[2].classList.remove('fade-in');
+                imgContents[4].classList.remove('fade-in');
+                imgContents[0].style.width = '0';
+                imgContents[2].style.width = '0';
+                imgContents[4].style.width = '0';
+                el.classList.remove('on');
+            } else if ((el.id === 'A') && (el.classList.contains('on') === false)) {
+                imgContents[0].classList.remove('fade-out');
+                imgContents[2].classList.remove('fade-out');
+                imgContents[4].classList.remove('fade-out');
+                imgContents[0].classList.add('fade-in');
+                imgContents[2].classList.add('fade-in');
+                imgContents[4].classList.add('fade-in');
+                imgContents[0].style.width = '100%';
+                imgContents[2].style.width = '100%';
+                imgContents[4].style.width = '100%';
+                el.classList.add('on');
+            } else if ((el.id === 'B') && (el.classList.contains('on') === true)) {
+                imgContents[1].classList.add('fade-out');
+                imgContents[3].classList.add('fade-out');
+                imgContents[5].classList.add('fade-out');
+                imgContents[1].classList.remove('fade-in');
+                imgContents[3].classList.remove('fade-in');
+                imgContents[5].classList.remove('fade-in');
+                imgContents[1].style.width = '0';
+                imgContents[3].style.width = '0';
+                imgContents[5].style.width = '0';
+                el.classList.remove('on');
+            } else if ((el.id === 'B') && (el.classList.contains('on') === false)) {
+                imgContents[1].classList.remove('fade-out');
+                imgContents[3].classList.remove('fade-out');
+                imgContents[5].classList.remove('fade-out');
+                imgContents[1].classList.add('fade-in');
+                imgContents[3].classList.add('fade-in');
+                imgContents[5].classList.add('fade-in');
+                imgContents[1].style.width = '100%';
+                imgContents[3].style.width = '100%';
+                imgContents[5].style.width = '100%';
+                el.classList.add('on');
+            }
         }
-    }
 
         tabHeaders.forEach(function(tab){
             tab.addEventListener('click', handleClick);
@@ -692,12 +1089,9 @@ select {
             subtab.addEventListener('click', handleClick3);
         });
 
-        x.addEventListener('click', myFunction1);
-
-        galleryContents.forEach(function(gallery){
-            gallery.addEventListener('mouseover', toggleGallery);
+        imgSelector.forEach(function(selector){
+            selector.addEventListener('click', imgSelect);
         })
-
         // const el = document.createElement('div');
         // el.classList.add('box');
         // const container = document.querySelector('.box-container');
