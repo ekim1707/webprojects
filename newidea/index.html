@@ -18,7 +18,7 @@
     z-index: 10;
 }
 .flex_container {
-    width: 100vw;
+    width: 100%;
     height: 140vh;
     border-radius: 10px;
     padding-top: 2%;
@@ -89,7 +89,6 @@
     display: block;
     color: rgb(73, 65, 65);
     padding: 0 7px 0 7px;
-    margin: 2px;
     border: 2px solid gray;
     border-radius: 10px 10px 10px 10px;
     -webkit-text-stroke-color: black;
@@ -124,10 +123,10 @@
     flex-flow: row;
     justify-content: stretch;
     align-items: stretch;
-    width: 1110px;
-    height: 132vh;
+    width: 76vw;
+    height: 138vh;
     left: 292px;
-    margin-top: -57px;
+    margin-top: -10vh;
 }
 .adjust {
     padding: 0;
@@ -135,9 +134,9 @@
 .hidden {
     display: none;
 }
-.tab-container .tab-content:first-child {
+/* .tab-container .tab-content:first-child {
     display: block;
-}
+} */
 .selected {
     background: white;
     background-color: white;
@@ -355,13 +354,12 @@ select {
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: bolder;
+    cursor: pointer;
 }
 .tab-content3 {
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 135vh;
+    height: 138vh;
     width: 100%;
     overflow: auto;
     transition: 1s;
@@ -373,15 +371,36 @@ select {
     font-size: 40px;
     text-align: center;
     font-weight: bolder;
-    color: pink;
+    color: rgb(245, 118, 118);
 }
 a {
     display: inline-block;
-    color: blue;
-    transition: 1s;
-    width: 2.6vw;
+    color: rgb(245, 118, 118);
+    background-color: white;
+    transition: .8s;
+    width: 2.5vw;
+    padding: .3vw;
     text-align: center;
-    margin: auto;
+    font-weight: bolder;
+    /* border-bottom: 2px solid rgb(245, 118, 118); */
+    border: 2px solid gray;
+    border-radius: 10px;
+    text-decoration: none;
+    /* margin-right: .1vh; */
+    font-size: 13px;
+}
+a:hover {
+    color: red;
+    transition: .3s;
+    transition-timing-function: ease-in-out;
+    text-decoration: none;
+}
+.datetoggle {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-left: .8vw;
+    margin-right: .8vw;
 }
 </style>
 </head>
@@ -475,6 +494,7 @@ a {
                 </select>
             <select data-tabname2="tab2" class="selectbox2 hidden" id="selectbox2">
                 </select>
+            <div class="datetoggle hidden">
             <!-- <select data-tabname2="tab3" class="selectbox3 hidden" id="selectbox3">
                 </select> -->
             <a href="#1a">Jan</a>
@@ -483,18 +503,20 @@ a {
             <a href="#4a">Apr</a>
             <a href="#5a">May</a>
             <a href="#6a">Jun</a>
+            <br>
             <a href="#7a">Jul</a>
             <a href="#8a">Aug</a>
             <a href="#9a">Sep</a>
             <a href="#10a">Oct</a>
             <a href="#11a">Nov</a>
             <a href="#12a">Dec</a>
-            <div class="datetoggle"></div>
+            </div>
             <div class="item4" id="B">Gallery B</div>
             <select data-tabname2="tab1" class="selectbox1" id="selectbox1">
                 </select>
             <select data-tabname2="tab2" class="selectbox2 hidden" id="selectbox2">
                 </select>
+            <div class="datetoggle hidden">
             <!-- <select data-tabname2="tab3" class="selectbox3 hidden" id="selectbox3">
                 </select> -->
             <a href="#1b">Jan</a>
@@ -503,13 +525,14 @@ a {
             <a href="#4b">Apr</a>
             <a href="#5b">May</a>
             <a href="#6b">Jun</a>
+            <br>
             <a href="#7b">Jul</a>
             <a href="#8b">Aug</a>
             <a href="#9b">Sep</a>
             <a href="#10b">Oct</a>
             <a href="#11b">Nov</a>
             <a href="#12b">Dec</a>
-            <div class="datetoggle"></div>
+            </div>
                 </div>
         </div>
             <div data-tabname2="tab1" class="tab-content2 selected">
@@ -682,6 +705,7 @@ a {
                 <div class="imagebox">Empty</div>
                 </div>
                 </div>
+            <div class="hidden" id="space">&nbsp;&nbsp;</div>
             <div class="tab-content3 B" id="B">
                 <div class="gallery">Gallery B</div>
                 <div class="month" id="1b">
@@ -835,7 +859,7 @@ a {
         <div data-tabname="tab4" class="tab-content hidden">yes yes yes</div>
         <div data-tabname="tab5" class="tab-content hidden">no no no</div>
         <div data-tabname="tab6" class="tab-content hidden">
-            <div class="freewritepage">
+            <!-- <div class="freewritepage">
             <div class="freewritebox">
             <div class="pagelabel">Write and Save</div>
                 <textarea rows="22" cols="83">
@@ -844,7 +868,7 @@ a {
             <div class="journalstorage">
             <div class="pagelabel">Journal Log</div>
                 <div class="temp">(log goes here)</div>
-            </div></div>
+            </div></div> -->
         </div>
         <div data-tabname="tab7" class="tab-content hidden">maybe maybe</div>
         </div>
@@ -870,9 +894,10 @@ a {
         const videos = document.querySelectorAll('iframe');
         const listSelect = document.querySelectorAll('.selectbox1');
         const catSelect = document.querySelectorAll('.selectbox2');
-        const dateToggle = document.querySelector('.datetoggle');
+        const dateToggle = document.querySelectorAll('.datetoggle');
         const galleries1 = document.querySelectorAll('.first');
         const galleries2 = document.querySelectorAll('.second');
+        const nbspace = document.getElementById('space');
 
         let imgLists = ['Old Oak Dr. 1995', 'Random Korea Hangouts', 'Hillsong Music VODs'];
         let imgCategories = ['Younger Years', 'Nostalgic', 'Favorite Music Videos', 'College'];
@@ -1007,19 +1032,23 @@ a {
             });
             listSelect.forEach((list) => {
                 list.classList.remove('hidden');
-            })
+            });
             catSelect.forEach((list) => {
                 list.classList.remove('hidden');
-            })
-            dateToggle.classList.remove('hidden');
+            });
+            dateToggle.forEach((list) => {
+                list.classList.remove('hidden');
+            });
             if (listSelect[0].dataset.tabname2 === tabname2){
                 catSelect[0].classList.add('hidden');
                 catSelect[1].classList.add('hidden');
-                dateToggle.classList.add('hidden');
+                dateToggle[0].classList.add('hidden');
+                dateToggle[1].classList.add('hidden');
             } else if (catSelect[0].dataset.tabname2 === tabname2){
                 listSelect[0].classList.add('hidden');
                 listSelect[1].classList.add('hidden');
-                dateToggle.classList.add('hidden');
+                dateToggle[0].classList.add('hidden');
+                dateToggle[1].classList.add('hidden');
             } else {
                 listSelect[0].classList.add('hidden');
                 listSelect[1].classList.add('hidden');
@@ -1074,6 +1103,15 @@ a {
                 imgContents[3].style.width = '100%';
                 imgContents[5].style.width = '100%';
                 el.classList.add('on');
+            }
+            if ((imgSelector[0].classList.contains('on')) && (imgSelector[1].classList.contains('on'))) {
+                subContents.forEach((tab) => {
+                    nbspace.classList.remove('hidden');
+                });
+            } else {
+                subContents.forEach((tab) => {
+                    nbspace.classList.add('hidden');
+                });
             }
         }
 
