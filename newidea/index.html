@@ -80,9 +80,14 @@
     font-weight: 800;
 }
 .item2:hover {
-    color: red;
     cursor: pointer;
-    transition: 1s;
+    animation: blinking 2s ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes blinking {
+    0% { color: rgb(73, 65, 65); }
+    50% { color: red; }
+    100% { color: rgb(73, 65, 65); }
 }
 .item3 {
     background-color: white;
@@ -390,7 +395,7 @@ a {
 a:hover {
     color: red;
     background-color: white;
-    transition: .8s;
+    transition: .4s;
     transition-timing-function: ease-in-out;
     text-decoration: none;
 }
@@ -558,7 +563,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos">
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos" id="OldOakDr.1995">
                 <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
                 <div class="imagebox">
                     Empty
@@ -569,7 +574,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos" id="RandomKoreaHangouts">
                 <div class="imagebox">
                     Empty
                 </div>
@@ -712,7 +717,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos">
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos" id="OldOakDr.1995">
                 <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
                 <div class="imagebox">
                     Empty
@@ -723,7 +728,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos" id="RandomKoreaHangouts">
                 <div class="imagebox">
                     Empty
                 </div>
@@ -872,6 +877,8 @@ a:hover {
         </div>
         </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.5.0/js/md5.min.js"></script>
     <script>
         window.onscroll = function() {myFunction()};
         
@@ -922,26 +929,33 @@ a:hover {
                 newDiv.classList.add('month');
                 newDiv.style.fontSize = "20px";
                 newDiv.innerText = `${value}`;
+                newDiv.id = value.split(' ').join('');
                 const hrLine = document.createElement('hr');
+                const $imageDiv = $('<div>').addClass('imagesection');
+                console.log($imageDiv);
                 hrLine.classList.add('shorten1');
                 gallery.appendChild(newDiv);
                 gallery.appendChild(hrLine);
+                gallery.append($imageDiv);
             });
 
         });
 
-        galleries2.forEach((gallery) => {
-            imgCategories.forEach((value) => {
-                const newDiv = document.createElement('div');
-                newDiv.classList.add('month');
-                newDiv.style.fontSize = "20px";
-                newDiv.innerText = `${value}`;
-                const hrLine = document.createElement('hr');
-                hrLine.classList.add('shorten1');
-                gallery.appendChild(newDiv);
-                gallery.appendChild(hrLine);
-            });
-        });
+        // galleries2.forEach((gallery) => {
+        //     imgCategories.forEach((value) => {
+        //         const newDiv = document.createElement('div');
+        //         newDiv.classList.add('month');
+        //         newDiv.style.fontSize = "20px";
+        //         newDiv.innerText = `${value}`;
+        //         newDiv.id = value.split(' ').join('');
+        //         $images = $(`#${newDiv.id}`);
+        //         const hrLine = document.createElement('hr');
+        //         hrLine.classList.add('shorten1');
+        //         gallery.appendChild(newDiv);
+        //         gallery.appendChild(hrLine);
+        //         newDiv.append($images);
+        //     });
+        // });
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
