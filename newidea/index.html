@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.5.0/js/md5.min.js"></script>
         <title>New Idea</title>
 <style>
 .background {
@@ -424,7 +426,7 @@ a:hover {
             <li data-tabname="tab6" class="item">FREEWRITE</li>
             <li data-tabname="tab7" class="item">TIMELINE</li>
             </ul>
-            <div class="menu" onclick="myFunction1(this)">
+            <div class="menu">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
                     <div class="bar3"></div>
@@ -440,7 +442,7 @@ a:hover {
             <div class="profilegroup">
                 <div class="profilebox" style="background-image: url(https://www.google.com)">
                     <div class="boxcontent">
-                    <img src="../bootstrap/images/pd.JPG" alt="profilepic" class="image2">
+                    <img src="../bootstrap/images/pd.JPG" alt="profilepic" class="image2" id="google">
                     Eugene Kim
                     </div></div>
                 <div class="profilebox" style="background-image: url(https://www.google.com)">
@@ -563,8 +565,8 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos" id="OldOakDr.1995">
-                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="OldOakDr.1995">
+                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="HillsongMusicVODs"></iframe>
                 <div class="imagebox">
                     Empty
                 </div>
@@ -574,7 +576,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos" id="RandomKoreaHangouts">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="RandomKoreaHangouts">
                 <div class="imagebox">
                     Empty
                 </div>
@@ -717,8 +719,8 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="photos" id="OldOakDr.1995">
-                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="videos"></iframe>
+                <img src="../../../../Documents/Pictures/Me highschool.jpg" alt="imagelib" class="image3" id="OldOakDr.19952">
+                <iframe width="150" height="100" src="https://www.youtube.com/embed/O8qGZ6vSWvI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="HillsongMusicVODs"></iframe>
                 <div class="imagebox">
                     Empty
                 </div>
@@ -728,7 +730,7 @@ a:hover {
                 </div>
                 <hr class="shorten">
                 <div class="imagesection">
-                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="photos" id="RandomKoreaHangouts">
+                <img src="../../../../Documents/Pictures/Sang Yulim.jpg" alt="imagelib" class="image3" id="RandomKoreaHangouts2">
                 <div class="imagebox">
                     Empty
                 </div>
@@ -877,8 +879,6 @@ a:hover {
         </div>
         </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.5.0/js/md5.min.js"></script>
     <script>
         window.onscroll = function() {myFunction()};
         
@@ -926,36 +926,43 @@ a:hover {
         galleries1.forEach((gallery) => {
             imgLists.forEach((value) => {
                 const newDiv = document.createElement('div');
+                const anotherDiv = document.createElement('div');
                 newDiv.classList.add('month');
                 newDiv.style.fontSize = "20px";
                 newDiv.innerText = `${value}`;
-                newDiv.id = value.split(' ').join('');
+                const image = document.createElement('div');
+                image.classList.add('imagebox');
+                image.innerHTML = 'Empty';
+                anotherDiv.classList.add('imagesection');
+                anotherDiv.appendChild(image);
                 const hrLine = document.createElement('hr');
-                const $imageDiv = $('<div>').addClass('imagesection');
-                console.log($imageDiv);
                 hrLine.classList.add('shorten1');
                 gallery.appendChild(newDiv);
                 gallery.appendChild(hrLine);
-                gallery.append($imageDiv);
+                gallery.appendChild(anotherDiv);
             });
 
         });
 
-        // galleries2.forEach((gallery) => {
-        //     imgCategories.forEach((value) => {
-        //         const newDiv = document.createElement('div');
-        //         newDiv.classList.add('month');
-        //         newDiv.style.fontSize = "20px";
-        //         newDiv.innerText = `${value}`;
-        //         newDiv.id = value.split(' ').join('');
-        //         $images = $(`#${newDiv.id}`);
-        //         const hrLine = document.createElement('hr');
-        //         hrLine.classList.add('shorten1');
-        //         gallery.appendChild(newDiv);
-        //         gallery.appendChild(hrLine);
-        //         newDiv.append($images);
-        //     });
-        // });
+        galleries2.forEach((gallery) => {
+            imgCategories.forEach((value) => {
+                const newDiv = document.createElement('div');
+                const anotherDiv = document.createElement('div');
+                newDiv.classList.add('month');
+                newDiv.style.fontSize = "20px";
+                newDiv.innerText = `${value}`;
+                const image = document.createElement('div');
+                image.classList.add('imagebox');
+                image.innerHTML = 'Empty';
+                anotherDiv.classList.add('imagesection');
+                anotherDiv.appendChild(image);
+                const hrLine = document.createElement('hr');
+                hrLine.classList.add('shorten1');
+                gallery.appendChild(newDiv);
+                gallery.appendChild(hrLine);
+                gallery.appendChild(anotherDiv);
+            });
+        });
         
         function myFunction() {
             if (window.pageYOffset > sticky) {
@@ -1142,6 +1149,7 @@ a:hover {
         imgSelector.forEach(function(selector){
             selector.addEventListener('click', imgSelect);
         })
+
         // const el = document.createElement('div');
         // el.classList.add('box');
         // const container = document.querySelector('.box-container');
