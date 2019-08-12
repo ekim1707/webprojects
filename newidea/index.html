@@ -48,6 +48,11 @@
     list-style-type: none;
     padding-left: 0;
 }
+.tab-list-profile {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0;
+}
 .item {
     display: flex;
     flex-grow: 1;
@@ -122,7 +127,6 @@
 .tab-content {
     display: block;
     width: 100%;
-    padding: 10px;
     border-radius: 10px 0px 10px 10px;
 }
 .tab-content2 {
@@ -131,6 +135,16 @@
     flex-flow: row;
     justify-content: stretch;
     align-items: stretch;
+    width: 76vw;
+    height: 138vh;
+    left: 292px;
+    margin-top: -10vh;
+}
+.tab-content-profile {
+    display: flex;
+    position: absolute;
+    flex-flow: column;
+    align-items: flex-start;
     width: 76vw;
     height: 138vh;
     left: 292px;
@@ -408,6 +422,12 @@ a:hover {
     margin-left: .8vw;
     margin-right: .8vw;
 }
+#ln {
+    font-size: 17px;
+}
+#favs {
+    font-size: 17px;
+}
 </style>
 </head>
     <body>
@@ -435,6 +455,14 @@ a:hover {
         <div class="tab-container">
         <div data-tabname="tab1" class="tab-content">yes yes yes</div>
         <div data-tabname="tab2" class="tab-content hidden">
+            <ul class="tab-list-profile" id="mySticky1">
+                <li class="item2 selected2" id="ln">Last Name</li>
+                <li class="item2" id="favs">Favorites</li>
+            </ul>
+            <div class="toggle-center" id="mySticky2">
+
+            </div>
+            <div class="tab-content-profile">
             <div class="lettergroup">
             <div class="lastnameletter">
                 <strong>K</strong>
@@ -481,7 +509,7 @@ a:hover {
                     </div></div>
                     </div>
                 </div>
-        </div>
+        </div></div>
         <div data-tabname="tab3" class="tab-content adjust hidden">
             <ul class="tab-list2" id="mySticky1">
                 <li class="item2 selected2" id="phototoggle">Photos</li>
