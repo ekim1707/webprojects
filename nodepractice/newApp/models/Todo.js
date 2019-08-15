@@ -1,31 +1,33 @@
 const db = require('../db');
 
-function getAll() {
-    return db.any(`
-    select * from todos;
-    `)
-        // .then((data) => {
-        //     console.log('here is the data:');
-        //     console.log(data);
-        // })
-        .catch((err) => {
-            console.log('UH OH.');
-            console.log(err);
-        })
+async function getAll() {
+    try{
+    return await db.any(`
+    select * from todos
+    `);
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
 }
 
-function getOne(id) {
-    return db.one(`
+async function getOne(id) {
+    try {
+    const user = await db.one(`
         select * from todos where id=$1
     `, [id])
+    // debugger;
+    return user;
+    } catch (error) {
+        console.log('UH OH');
+        console.log(error);
+        return {};
+    }
     // .then((data) => {
     //     console.log('here is the data:');
     //     console.log(data);
     // })
-    .catch((err) => {
-        console.log('UH OH.');
-        console.log(err);
-    })
+    // return user;
 }
 
 module.exports = {

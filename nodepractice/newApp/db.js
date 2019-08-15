@@ -19,6 +19,8 @@ console.log(process.env.DB_PORT);
 console.log(process.env.DB_NAME);
 
 console.log('yay');
+
+module.exports = db;
 // console.log(db);
 // db.any(`
 // select * from todos;
