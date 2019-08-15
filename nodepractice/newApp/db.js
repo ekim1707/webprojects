@@ -3,7 +3,10 @@
 
 require('dotenv').config();
 
-const pgp = require('pg-promise')();
+const pgp = require('pg-promise')({
+    // Logs SQL queries to console.
+    query: (e) => console.log(e.query)
+});
 
 const db = pgp({
     host: process.env.DB_HOST,
@@ -32,5 +35,3 @@ console.log('yay');
 // When you want one and only one, use the .one() method. That way, if you don't find it,
 // it triggers the .catch(). This is better than doing an if/else inside your .then().
 // .one() will throw an exception if it gets anything but 1 and only 1 result.
-
-module.exports = db;
