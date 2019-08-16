@@ -3,10 +3,22 @@ const db = require('../db');
 
 // 2. Cook.
 async function getAll() {
-    const data = await db.any(`
+    const users = await db.any(`
     select * from users
     `)
-    return data;
+    const arrayOfPromises = users.map( async user => {
+        const userTodos = await db.any(`SELECT * FROM todos where user_id=$1`, [user.id]);
+        user.todos = userTodos;
+        console.log(user);
+        return user;
+    })
+    console.log('\n\n\n\n============');
+    console.log(arrayOfPromises);
+
+    const arrayOfUsersWithTodos = await Promise.all(arrayOfPromises);
+    console.log('array');
+    console.log(arrayOfUsersWithTodos);
+    return arrayOfUsersWithTodos;
 }
 
 // this is what we want to return for one user
@@ -88,8 +100,49 @@ async function getOne(id) {
     // })
 }
 
+// accept an object argument so we have flexibility later on
+// That is, we can add more database columns without having
+// to update all of our function calls
+async function createUser({ displayname, username }) {
+    // const { displayname, username } = userDataObj; (replaced
+    // by destructured argument parameter above, which
+    // accomplishes the same thing)
+    const newUserInfo = await db.one(`
+        insert into users
+            (displayname, username)
+        values ($1, $2)
+
+        returning id
+
+    `, [displayname, username]);
+
+    console.log(newUserInfo);
+
+    return newUserInfo;
+}
+
+async function createTodo({ priority, task, status }, theId) {
+    const newTodo = await db.one(`
+        insert into todos
+            (priority, task, status, user_id)
+        values ($1, $2, $3, $4)
+
+        returning id
+
+    `, [priority, task, status, theId]);
+
+    return newTodo;
+}
+
+// createUser({
+//     displayname: 'lalalala',
+//     username: 'zazazazaza'
+// });
+
 // 3. Serve
 module.exports = {
     getAll,
     getOne,
+    createUser,
+    createTodo
 };
