@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    ${includes}
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            ${navbar}
+        </header>
+        <h1>Create a new To-do</h1>
+        <!-- "action" is the route to send the input to. If you leave action blank, it will post to the CURRENT location -->
+        <form action="" method="POST">
+            <label>
+                Task:
+                <!-- The "name" attribute of the "form" field is the key that the server sees in "req.body". The "value" is what the user types. -->
+                <input name="task">
+            </label>
+            <input name="user_id" value="1">
+            <input type="submit">
+        </form>
+</body>
+</html>
