@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    ${includes}
+</head>
+<body>
+    <header>
+        ${navbar}
+    </header>
+    <h1>Create Your Own Pokemon!</h1>
+    <h2>Enter Information for your new Pokemon here:</h2>
+    <div class="account-form">
+        <form action="./create" method="POST">
+            <div>
+                <label for="name">Name: </label>
+                <input name="name" id="name">
+            </div>
+            <div>
+                <label for="type">Type: </label>
+                <input name="type" id="type">
+            </div>
+            <div>
+                <label for="hp">HP: </label>
+                <input name="hp" id="hp">
+            </div>
+            <div>
+                <label for="evolves_from">Evolves from: </label>
+                <input name="evolves_from" id="evolves-from">
+            </div>
+            <div>
+                <button type="submit" formmethod="POST">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

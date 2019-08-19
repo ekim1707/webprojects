@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon or Poke no one</title>
+    ${includes}
+</head>
+<body>
+    <header>
+        ${navbar}
+    </header>
+    <h1>
+        Have some fun with Pokemon
+    </h1>
+    <h2>
+        Make an Account:
+    </h2>
+    <div class="account-form">
+        <form action="./index" method="POST">
+            <div>
+                <label for="displayname">Display name: </label>
+                <input name="displayname" id="displayname">
+            </div>
+            <div>
+                <label for="username">User name: </label>
+                <input name="username" id="username">
+            </div>
+            <div>
+                <button type="submit" formmethod="POST">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

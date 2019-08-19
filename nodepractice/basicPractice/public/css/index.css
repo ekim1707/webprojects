@@ -1,0 +1,52 @@
+body {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(247, 247, 212), rgb(243, 243, 94));
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+    color: red;
+}
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+a {
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: lightgrey;
+    text-decoration: none;
+    color: red;
+    font-size: 20px;
+    transition: .5s;
+}
+a:hover {
+    cursor: pointer;
+    font-size: 28px;
+    background-color: white;
+    transition: .5s;
+    animation: triggered 3s infinite;
+}
+
+@keyframes triggered {
+    0% { 
+        color: red;
+    }
+    25% {
+        color: orange;
+    }
+    50% {
+        color: green;
+    }
+    75% {
+        color: blue;
+    }
+    100% {
+        color: red;
+    }
+}
