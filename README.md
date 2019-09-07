@@ -114,7 +114,7 @@ This first-attempt html was made according to the developer mozilla HTML instruc
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex.png 'googleex.png')
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex2.png 'googleex2.png')
 
-These screenshots are to depict the achieved display-size functionality of the aforementioned Google Exercise above (#3 in "Most Interesting Available Working Files").
+These screenshots are to depict the achieved display-size responsiveness of the aforementioned Google Exercise above (#3 in "Most Interesting Available Working Files").
 
 ## Github Link
 
