@@ -2,8 +2,8 @@
 
 Hello. Thanks for checking out my first steps into html. There are at least a handful of visually-functional beginner layouts available for viewing here.
 
-##Contents
---- 
+## Contents
+
   * What It Is
   * What We Used
   * Challenges
@@ -12,12 +12,12 @@ Hello. Thanks for checking out my first steps into html. There are at least a ha
   * Github Link
   * Code Examples
 
-##What It Is
----
+## What It Is
+
 This is all my beginner work with html mostly consisting of layouts required from exercises from DigitalCrafts classes along with my own very first attempt at a website made from purely self-teaching (before camp even started) in the "widow-site" folder.
 
-##What We Used
----
+## What We Used
+
   * HTML
   * CSS
   * Bootstrap
@@ -25,16 +25,15 @@ This is all my beginner work with html mostly consisting of layouts required fro
   * Media Queries
   * JavaScript
 
-##Challenges
----
+## Challenges
+
 There proved to be several difficult challenges with HTML that were not expected. At the top of the list were:
 
   * General sizing, as well as accomodating media display size differences
   * Investigating cross-compatibility amongst different web browsers
   * Mastering relation between the different display/position styles in CSS
 
-##Most Interesting Available Working Files
----
+## Most Interesting Available Working Files
 
 1. [90's-style-site/index.html](https://github.com/ekim1707/web_projects/blob/master/90's-style-site/index.html)
 
@@ -102,24 +101,24 @@ Analysis:
 
 This first-attempt html was made according to the developer mozilla HTML instruction page (https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web), which was provided as a reference for the pre-work that was assigned before the start of the DigitalCrafts bootcamp. The website is very basic and raw in terms of both visuality and user-friendly interface, yet it at least does serve its function well enough.
 
-##Screenshots
----
+## Screenshots
+
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex.png 'googleex.png')
 ![alt text](https://github.com/ekim1707/web_projects/blob/master/googleex2.png 'googleex2.png')
 
 These screenshots are to depict the achieved display-size functionality of the aforementioned Google Exercise above (#3 in "Most Interesting Available Working Files").
 
-##Github Link
----
+## Github Link
+
 [Github](https://github.com/ekim1707/web_projects)
 
-##Code Examples
----
+## Code Examples
+
 Included is the CSS for the classexercises/googleexercise.html file.
 
 * classexercises/styles/styleg.css:
 
-'''
+```
 html {
     position: relative;
     min-height: 100%;
@@ -168,4 +167,5 @@ button {
     height: 35px;
     margin: 15px 5px;
     border: none;
-}'''
+}
+```
