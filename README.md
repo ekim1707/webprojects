@@ -35,9 +35,9 @@ There proved to be several difficult challenges with HTML that were not expected
 
 ## Most Interesting Available Working Files
 
-90's style site
+1. 90's style site
 ---
-1. [90's-style-site/index.html](https://github.com/ekim1707/web_projects/blob/master/90's-style-site/index.html)
+[90's-style-site/index.html](https://github.com/ekim1707/web_projects/blob/master/90's-style-site/index.html)
 
 Grade: N/A
 
@@ -64,9 +64,9 @@ Analysis:
 
 This site was the first one made that featured a sticky headbar. The headbar does not adjust to display-size, which would the very next change I would make to it. This is also the first headbar I ever made that implemented hover color changes for links, along with a full-page background image, and the use of -webkit- for text-bordering in CSS.
 
-Google exercise
+2. Google exercise
 ---
-2. [classexercises/googleexercise.html](https://github.com/ekim1707/web_projects/blob/master/classexercises/googleexercise.html)
+[classexercises/googleexercise.html](https://github.com/ekim1707/web_projects/blob/master/classexercises/googleexercise.html)
 
 Grade: N/A
 
@@ -81,9 +81,9 @@ Analysis:
 
 This exercise was mainly focused on the use of Flexbox, which is evident in the CSS (classexercises/styleg.css). The final product I created is display-size compatible, and also features my first use of input-boxes and buttons (non-functional; for display purposes only).
 
-Bootstrap exercise
+3. Bootstrap exercise
 ---
-3. [bootstrap/bslayout.html](https://github.com/ekim1707/web_projects/blob/master/bootstrap/bslayout.html)
+[bootstrap/bslayout.html](https://github.com/ekim1707/web_projects/blob/master/bootstrap/bslayout.html)
 
 Grade: N/A
 
@@ -97,9 +97,9 @@ Analysis:
 
 Overall, the presentation came out as desired. The headbar is again sticky, yet this time it is also display-size compatible (as is the rest of the layout). Flexbox was incorporated along with the bootstrap foundation to complete the project. The website was intentionally left unstyled to highlight the structural integrity of the bootstrap layout.
 
-Overwatch Widowmaker practice site
+4. Overwatch Widowmaker practice site
 ---
-4. [widow-site/index.html](https://github.com/ekim1707/web_projects/blob/master/widow-site/index.html)
+[widow-site/index.html](https://github.com/ekim1707/web_projects/blob/master/widow-site/index.html)
 
 Grade: N/A
 
